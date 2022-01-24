@@ -1,0 +1,3662 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Synapses &#8212; NeuroML Documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/zcustom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Inputs" href="Inputs.html" />
+    <link rel="prev" title="Channels" href="Channels.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">NeuroML Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User documentation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MissionAndAims.html">
+   Mission and Aims
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Usage.html">
+   How to use this documentation
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../GettingStarted.html">
+   Getting started with NeuroML
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SingleNeuronExample.html">
+     Simulating a regular spiking Izhikevich neuron
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NML2_examples/SingleNeuron.html">
+     Interactive single Izhikevich neuron NeuroML example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../IzhikevichNetworkExample.html">
+     A two population network of regular spiking Izhikevich neurons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NML2_examples/IzhikevichNetwork.html">
+     Interactive two population network example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SingleCompartmentHHExample.html">
+     Simulating a single compartment Hodgkin-Huxley neuron
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NML2_examples/HH_single_compartment.html">
+     Interactive single compartment HH example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MultiCompartmentOLMexample.html">
+     Simulating a multi compartment OLM neuron
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NML2_examples/OLM.html">
+     Interactive multi-compartment OLM cell example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../FindingNeuroMLModels.html">
+   Finding and sharing NeuroML models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CreatingNeuroMLModels.html">
+   Creating NeuroML models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ValidatingNeuroMLModels.html">
+   Validating NeuroML Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VisualisingNeuroMLModels.html">
+   Visualising NeuroML Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SimulatingNeuroMLModels.html">
+   Simulating NeuroML Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../OptimisingNeuroMLModels.html">
+   Optimising/fitting NeuroML Models
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Specification.html">
+   Schema/Specification
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../NeuroMLv2.html">
+     NeuroML v2
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="NeuroMLCoreDimensions.html">
+       NeuroMLCoreDimensions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="NeuroMLCoreCompTypes.html">
+       NeuroMLCoreCompTypes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Cells.html">
+       Cells
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Channels.html">
+       Channels
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Synapses
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Inputs.html">
+       Inputs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Networks.html">
+       Networks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="PyNN.html">
+       PyNN
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Simulation.html">
+       Simulation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NeuroMLv1.html">
+     NeuroML v1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../UsingNeuroMLv2AndLEMS.html">
+   Using NeuroML 2 and LEMS
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Conventions.html">
+     Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../UnitsAndDimensions.html">
+     Units and dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Paths.html">
+     Paths
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../QuantitiesAndRecording.html">
+     Quantities and recording
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LEMSSimulation.html">
+     LEMS Simulation files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ExtendingNeuroMLv2WithLEMS.html">
+     Extending NeuroML with LEMS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Software/Software.html">
+   Software and Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/pyNeuroML.html">
+     pyNeuroML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/libNeuroML.html">
+     libNeuroML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/pyLEMS.html">
+     pyLEMS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/NeuroMLlite.html">
+     NeuroMLlite
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/jNeuroML.html">
+     jNeuroML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/jLEMS.html">
+     jLEMS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/NeuroML_API.html">
+     NeuroML C++ API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/MatLab.html">
+     MatLab NeuroML Toolbox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/SupportingTools.html">
+     Tools and resources with NeuroML support
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Publications.html">
+   Citing NeuroML and related publications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../FAQ.html">
+   Frequently asked questions (FAQ)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  NeuroML events
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/202109-COMBINE.html">
+   October 2021: NeuroML development workshop at COMBINE meeting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/202108-INCF-Training-Week.html">
+   August 2021: NeuroML tutorial at INCF Training Weeks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/202107-CNS2021.html">
+   July 2021: NeuroML tutorial at CNS*2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/202103-Harmony.html">
+   March 2021: NeuroML hackathon at HARMONY 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/PastEvents.html">
+   Past NeuroML Events
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The NeuroML Initiative
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/CommunicationChannels.html">
+   Getting in touch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/Standards.html">
+   Overview of standards in neuroscience
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/History.html">
+   A brief history of NeuroML
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../NeuroMLOrg/Board.html">
+   NeuroML Editorial Board
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../NeuroMLOrg/BoardHistory.html">
+     History of the NeuroML Editorial Board
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../NeuroMLOrg/BoardMeetingReports.html">
+     Workshop and Meeting reports
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/ScientificCommittee.html">
+   NeuroML Scientific Committee
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/Funding.html">
+   Funding and Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/Contributors.html">
+   NeuroML contributors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Developer documentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Devdocs/Devdocs.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Devdocs/DevSOP.html">
+     Contribution guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Devdocs/ReleaseProcess.html">
+     Release Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Devdocs/UpdatingStandard.html">
+     Making changes to the NeuroML standard
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Devdocs/InteractionOtherBits.html">
+   Interaction with other languages and standards
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Reference/Glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Reference/zBibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Userdocs/Schemas/Synapses.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NeuroML/Documentation"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NeuroML/Documentation/issues/new?title=Issue%20on%20page%20%2FUserdocs/Schemas/Synapses.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/NeuroML/Documentation/edit/master/source/Userdocs/Schemas/Synapses.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basesynapse">
+   <em>
+    baseSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basevoltagedepsynapse">
+   <em>
+    baseVoltageDepSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basesynapsedl">
+   <em>
+    baseSynapseDL
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basecurrentbasedsynapse">
+   <em>
+    baseCurrentBasedSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alphacurrentsynapse">
+   alphaCurrentSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baseconductancebasedsynapse">
+   <em>
+    baseConductanceBasedSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baseconductancebasedsynapsetwo">
+   <em>
+    baseConductanceBasedSynapseTwo
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponesynapse">
+   expOneSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alphasynapse">
+   alphaSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exptwosynapse">
+   expTwoSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expthreesynapse">
+   expThreeSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baseblockmechanism">
+   <em>
+    baseBlockMechanism
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#voltageconcdepblockmechanism">
+   voltageConcDepBlockMechanism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baseplasticitymechanism">
+   <em>
+    basePlasticityMechanism
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tsodyksmarkramdepmechanism">
+   tsodyksMarkramDepMechanism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tsodyksmarkramdepfacmechanism">
+   tsodyksMarkramDepFacMechanism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blockingplasticsynapse">
+   blockingPlasticSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doublesynapse">
+   doubleSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stdpsynapse">
+   stdpSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gapjunction">
+   gapJunction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basegradedsynapse">
+   <em>
+    baseGradedSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#silentsynapse">
+   silentSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lineargradedsynapse">
+   linearGradedSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradedsynapse">
+   gradedSynapse
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Synapses</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basesynapse">
+   <em>
+    baseSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basevoltagedepsynapse">
+   <em>
+    baseVoltageDepSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basesynapsedl">
+   <em>
+    baseSynapseDL
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basecurrentbasedsynapse">
+   <em>
+    baseCurrentBasedSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alphacurrentsynapse">
+   alphaCurrentSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baseconductancebasedsynapse">
+   <em>
+    baseConductanceBasedSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baseconductancebasedsynapsetwo">
+   <em>
+    baseConductanceBasedSynapseTwo
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponesynapse">
+   expOneSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alphasynapse">
+   alphaSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exptwosynapse">
+   expTwoSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expthreesynapse">
+   expThreeSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baseblockmechanism">
+   <em>
+    baseBlockMechanism
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#voltageconcdepblockmechanism">
+   voltageConcDepBlockMechanism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baseplasticitymechanism">
+   <em>
+    basePlasticityMechanism
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tsodyksmarkramdepmechanism">
+   tsodyksMarkramDepMechanism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tsodyksmarkramdepfacmechanism">
+   tsodyksMarkramDepFacMechanism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blockingplasticsynapse">
+   blockingPlasticSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doublesynapse">
+   doubleSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stdpsynapse">
+   stdpSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gapjunction">
+   gapJunction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basegradedsynapse">
+   <em>
+    baseGradedSynapse
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#silentsynapse">
+   silentSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lineargradedsynapse">
+   linearGradedSynapse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradedsynapse">
+   gradedSynapse
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="synapses">
+<span id="schema-synapses"></span><h1>Synapses<a class="headerlink" href="#synapses" title="Permalink to this headline">¶</a></h1>
+<p><strong>A number of synaptic ComponentTypes for use in NeuroML 2 documents, e.g.  <a class="reference internal" href="#schema-exponesynapse"><span class="std std-ref">expOneSynapse</span></a>,  <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a>,  <a class="reference internal" href="#schema-blockingplasticsynapse"><span class="std std-ref">blockingPlasticSynapse</span></a>. These extend the  <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a> ComponentType. Also defined continuously transmitting synapses, e.g.  <a class="reference internal" href="#schema-gapjunction"><span class="std std-ref">gapJunction</span></a> and  <a class="reference internal" href="#schema-gradedsynapse"><span class="std std-ref">gradedSynapse</span></a>.</strong></p>
+<hr class="docutils" />
+<p>Original ComponentType definitions: <a class="reference external" href="https://github.com/NeuroML/NeuroML2/blob/documentation_update/NeuroML2CoreTypes//Synapses.xml">Synapses.xml</a>.
+Schema against which NeuroML based on these should be valid: <a class="reference external" href="https://github.com/NeuroML/NeuroML2/tree/documentation_update/Schemas/NeuroML2/NeuroML_v2.2.xsd">NeuroML_v2.2.xsd</a>.
+Generated on 17/11/21 from <a class="reference external" href="https://github.com/NeuroML/NeuroML2/commit/b3f361ad8a618c458f690c05091f62bae4763a72">this</a> commit.
+Please file any issues or questions at the <a class="reference external" href="https://github.com/NeuroML/NeuroML2/issues">issue tracker here</a>.</p>
+<hr class="docutils" />
+<div class="section" id="basesynapse">
+<span id="schema-basesynapse"></span><h2><em>baseSynapse</em><a class="headerlink" href="#basesynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a></em></p>
+<p><i>Base type for all synapses, i.e. ComponentTypes which produce a current ( dimension current ) and change Dynamics in response to an incoming event.</i></p>
+<p><a class="reference external" href="https://bioportal.bioontology.org/ontologies/CNO/?p=classes&amp;conceptid=cno_0000009">Bioportal entry for Computational Neuroscience Ontology related to baseSynapse.</a></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="31a0c771-0f97-466b-b0b8-0ef6deed16cc" name="099fdd7b-932b-441a-bffe-80a7fd0a2dc8" type="radio">
+</input><label class="tabbed-label" for="31a0c771-0f97-466b-b0b8-0ef6deed16cc">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="bfe422c2-9bf1-4256-8b6c-66fe86db984b" name="099fdd7b-932b-441a-bffe-80a7fd0a2dc8" type="radio">
+</input><label class="tabbed-label" for="bfe422c2-9bf1-4256-8b6c-66fe86db984b">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="044c656a-8a7c-4cb6-9437-2ac866749a4b" name="099fdd7b-932b-441a-bffe-80a7fd0a2dc8" type="radio">
+</input><label class="tabbed-label" for="044c656a-8a7c-4cb6-9437-2ac866749a4b">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=BaseSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">BaseSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">BaseSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="basevoltagedepsynapse">
+<span id="schema-basevoltagedepsynapse"></span><h2><em>baseVoltageDepSynapse</em><a class="headerlink" href="#basevoltagedepsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a></em></p>
+<p><i>Base type for synapses with a dependence on membrane potential.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="aa0d52ce-c541-4c6d-86ce-2a8fef277987" name="ab9e5e81-ad6b-42e0-b995-d9bf0a4e12a7" type="radio">
+</input><label class="tabbed-label" for="aa0d52ce-c541-4c6d-86ce-2a8fef277987">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="17fe9d4d-84e3-4b9b-b302-224128c62e6d" name="ab9e5e81-ad6b-42e0-b995-d9bf0a4e12a7" type="radio">
+</input><label class="tabbed-label" for="17fe9d4d-84e3-4b9b-b302-224128c62e6d">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="6b8a08b4-219f-4453-a4f4-0b59df65b3ed" name="ab9e5e81-ad6b-42e0-b995-d9bf0a4e12a7" type="radio">
+</input><label class="tabbed-label" for="6b8a08b4-219f-4453-a4f4-0b59df65b3ed">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="e146d849-6aef-428c-9a1e-265d87fa84cb" name="ab9e5e81-ad6b-42e0-b995-d9bf0a4e12a7" type="radio">
+</input><label class="tabbed-label" for="e146d849-6aef-428c-9a1e-265d87fa84cb">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=BaseVoltageDepSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">BaseVoltageDepSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">BaseVoltageDepSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="basesynapsedl">
+<span id="schema-basesynapsedl"></span><h2><em>baseSynapseDL</em><a class="headerlink" href="#basesynapsedl" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="Inputs.html#schema-basevoltagedeppointcurrentdl"><span class="std std-ref">baseVoltageDepPointCurrentDL</span></a></em></p>
+<p><i>Base type for all synapses, i.e. ComponentTypes which produce a dimensionless current and change Dynamics in response to an incoming event.</i></p>
+<p><a class="reference external" href="https://bioportal.bioontology.org/ontologies/CNO/?p=classes&amp;conceptid=cno_0000009">Bioportal entry for Computational Neuroscience Ontology related to baseSynapseDL.</a></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="19edafaf-9b64-45d2-97db-10ecee53799e" name="de00b9ad-a5e5-45ea-8d2d-7f9e2cda00d1" type="radio">
+</input><label class="tabbed-label" for="19edafaf-9b64-45d2-97db-10ecee53799e">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>I</strong></p></td>
+<td><p>The total (time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrentdl"><span class="std std-ref">basePointCurrentDL</span></a>)</em></p></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="e90836bb-b70b-4793-8968-3236e7b521e5" name="de00b9ad-a5e5-45ea-8d2d-7f9e2cda00d1" type="radio">
+</input><label class="tabbed-label" for="e90836bb-b70b-4793-8968-3236e7b521e5">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>V</strong></p></td>
+<td><p>The current may vary with the dimensionless voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="Inputs.html#schema-basevoltagedeppointcurrentdl"><span class="std std-ref">baseVoltageDepPointCurrentDL</span></a>)</em></p></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="basecurrentbasedsynapse">
+<span id="schema-basecurrentbasedsynapse"></span><h2><em>baseCurrentBasedSynapse</em><a class="headerlink" href="#basecurrentbasedsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a></em></p>
+<p><i>Synapse model which produces a synaptic current.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="828cabb7-c8ff-45af-83a8-a525b60bfdd2" name="f2456a86-3aa6-402b-9954-96930b9ed5f2" type="radio">
+</input><label class="tabbed-label" for="828cabb7-c8ff-45af-83a8-a525b60bfdd2">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="29d9e79d-ad30-439d-9128-da84371c11d4" name="f2456a86-3aa6-402b-9954-96930b9ed5f2" type="radio">
+</input><label class="tabbed-label" for="29d9e79d-ad30-439d-9128-da84371c11d4">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="8258f3ba-391f-47c4-bef0-85d1eb1d3eaf" name="f2456a86-3aa6-402b-9954-96930b9ed5f2" type="radio">
+</input><label class="tabbed-label" for="8258f3ba-391f-47c4-bef0-85d1eb1d3eaf">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=BaseCurrentBasedSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">BaseCurrentBasedSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">BaseCurrentBasedSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="alphacurrentsynapse">
+<span id="schema-alphacurrentsynapse"></span><h2>alphaCurrentSynapse<a class="headerlink" href="#alphacurrentsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basecurrentbasedsynapse"><span class="std std-ref">baseCurrentBasedSynapse</span></a></em></p>
+<p><i>Alpha current synapse: rise time and decay time are both <strong>tau.</strong>.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="4c18e822-7b09-49ab-b881-9fa62f7a4a0f" name="ea94a19d-ea40-408e-8d67-0b7864eb964d" type="radio">
+</input><label class="tabbed-label" for="4c18e822-7b09-49ab-b881-9fa62f7a4a0f">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>ibase</strong></p></td>
+<td><p>Baseline current increase after receiving a spike</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>tau</strong></p></td>
+<td><p>Time course for rise and decay</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="25b105a6-e0b5-4576-9169-505e3306f31d" name="ea94a19d-ea40-408e-8d67-0b7864eb964d" type="radio">
+</input><label class="tabbed-label" for="25b105a6-e0b5-4576-9169-505e3306f31d">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="1fac91f8-80fd-4253-a83a-86ff16eeb0c7" name="ea94a19d-ea40-408e-8d67-0b7864eb964d" type="radio">
+</input><label class="tabbed-label" for="1fac91f8-80fd-4253-a83a-86ff16eeb0c7">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="920d9eca-7c3c-417a-ae12-4950724d3be0" name="ea94a19d-ea40-408e-8d67-0b7864eb964d" type="radio">
+</input><label class="tabbed-label" for="920d9eca-7c3c-417a-ae12-4950724d3be0">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="d1d2cb13-074f-42ca-bd69-5cd6a90b26d4" name="ea94a19d-ea40-408e-8d67-0b7864eb964d" type="radio">
+</input><label class="tabbed-label" for="d1d2cb13-074f-42ca-bd69-5cd6a90b26d4">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>I</strong>: <a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p>
+</dd>
+<dd><p><strong>J</strong>: <a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p>
+</dd>
+<dt><i><strong>On Start</strong></i></dt><dd><p><strong>I</strong> = 0</p>
+</dd>
+<dd><p><strong>J</strong> = 0</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>J</strong> = J + weight * ibase</p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>i</strong> = I (exposed as <strong>i</strong>)</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>I</strong> /dt = (2.7182818284590451*J - I)/tau</p>
+</dd>
+<dd><p>d <strong>J</strong> /dt = -J/tau</p>
+</dd>
+</dl>
+</div>
+<input id="469056ac-3256-4f54-8d0d-1129d06a03e6" name="ea94a19d-ea40-408e-8d67-0b7864eb964d" type="radio">
+</input><label class="tabbed-label" for="469056ac-3256-4f54-8d0d-1129d06a03e6">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=AlphaCurrentSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">AlphaCurrentSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">AlphaCurrentSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ibase</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="baseconductancebasedsynapse">
+<span id="schema-baseconductancebasedsynapse"></span><h2><em>baseConductanceBasedSynapse</em><a class="headerlink" href="#baseconductancebasedsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a></em></p>
+<p><i>Synapse model which exposes a conductance <strong>g</strong> in addition to producing a current. Not necessarily ohmic!!</i></p>
+<p><a class="reference external" href="https://bioportal.bioontology.org/ontologies/CNO/?p=classes&amp;conceptid=cno_0000027">Bioportal entry for Computational Neuroscience Ontology related to baseConductanceBasedSynapse.</a></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="ba0e6208-906e-478e-b094-706b53c57127" name="4a7a103f-e9bf-4966-92f6-00cdde6ef287" type="radio">
+</input><label class="tabbed-label" for="ba0e6208-906e-478e-b094-706b53c57127">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>erev</strong></p></td>
+<td><p>Reversal potential of the synapse</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>gbase</strong></p></td>
+<td><p>Baseline conductance, generally the maximum conductance following a single spike</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="3bbb8f83-ffd2-4687-ab87-8dc8bb24dfb9" name="4a7a103f-e9bf-4966-92f6-00cdde6ef287" type="radio">
+</input><label class="tabbed-label" for="3bbb8f83-ffd2-4687-ab87-8dc8bb24dfb9">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>g</strong></p></td>
+<td><p>Time varying conductance through the synapse</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="18d28ceb-e0e2-4990-90fa-03dc6ba2c401" name="4a7a103f-e9bf-4966-92f6-00cdde6ef287" type="radio">
+</input><label class="tabbed-label" for="18d28ceb-e0e2-4990-90fa-03dc6ba2c401">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="5d008d0b-90d9-4136-8c8d-03690f36186c" name="4a7a103f-e9bf-4966-92f6-00cdde6ef287" type="radio">
+</input><label class="tabbed-label" for="5d008d0b-90d9-4136-8c8d-03690f36186c">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="9404d113-4783-4f53-81cb-14d56a49f8b0" name="4a7a103f-e9bf-4966-92f6-00cdde6ef287" type="radio">
+</input><label class="tabbed-label" for="9404d113-4783-4f53-81cb-14d56a49f8b0">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=BaseConductanceBasedSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">BaseConductanceBasedSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">BaseConductanceBasedSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gbase</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">erev</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="baseconductancebasedsynapsetwo">
+<span id="schema-baseconductancebasedsynapsetwo"></span><h2><em>baseConductanceBasedSynapseTwo</em><a class="headerlink" href="#baseconductancebasedsynapsetwo" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a></em></p>
+<p><i>Synapse model suited for a sum of two expTwoSynapses which exposes a conductance <strong>g</strong> in addition to producing a current. Not necessarily ohmic!!</i></p>
+<p><a class="reference external" href="https://bioportal.bioontology.org/ontologies/CNO/?p=classes&amp;conceptid=cno_0000027">Bioportal entry for Computational Neuroscience Ontology related to baseConductanceBasedSynapseTwo.</a></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="269f5556-9597-4517-8900-67f55cee1e39" name="b6b6044e-309a-41eb-82ea-04d6d7261ea6" type="radio">
+</input><label class="tabbed-label" for="269f5556-9597-4517-8900-67f55cee1e39">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>erev</strong></p></td>
+<td><p>Reversal potential of the synapse</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>gbase1</strong></p></td>
+<td><p>Baseline conductance 1</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>gbase2</strong></p></td>
+<td><p>Baseline conductance 2</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="5ec3f3f7-f5e5-4822-949f-98fc1390291b" name="b6b6044e-309a-41eb-82ea-04d6d7261ea6" type="radio">
+</input><label class="tabbed-label" for="5ec3f3f7-f5e5-4822-949f-98fc1390291b">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>g</strong></p></td>
+<td><p>Time varying conductance through the synapse</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="06e03f29-06eb-417f-a9cd-8995f07b51c4" name="b6b6044e-309a-41eb-82ea-04d6d7261ea6" type="radio">
+</input><label class="tabbed-label" for="06e03f29-06eb-417f-a9cd-8995f07b51c4">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="2c3aea10-f08b-4e44-81af-323d349dfc19" name="b6b6044e-309a-41eb-82ea-04d6d7261ea6" type="radio">
+</input><label class="tabbed-label" for="2c3aea10-f08b-4e44-81af-323d349dfc19">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="25aa33e5-479b-4e34-b3a8-4cc8e1a7a745" name="b6b6044e-309a-41eb-82ea-04d6d7261ea6" type="radio">
+</input><label class="tabbed-label" for="25aa33e5-479b-4e34-b3a8-4cc8e1a7a745">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=BaseConductanceBasedSynapseTwo" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">BaseConductanceBasedSynapseTwo</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">BaseConductanceBasedSynapseTwo</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gbase1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gbase2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">erev</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exponesynapse">
+<span id="schema-exponesynapse"></span><h2>expOneSynapse<a class="headerlink" href="#exponesynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a></em></p>
+<p><i>Ohmic synapse model whose conductance rises instantaneously by ( <strong>gbase</strong> * <strong>weight</strong> ) on receiving an event, and which decays exponentially to zero with time course <strong>tauDecay</strong>.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="e32dc476-d743-4544-94fb-eb2e3f5862aa" name="87bc3461-aa7b-4c67-b091-150824c7d00d" type="radio">
+</input><label class="tabbed-label" for="e32dc476-d743-4544-94fb-eb2e3f5862aa">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>erev</strong></p></td>
+<td><p>Reversal potential of the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>gbase</strong></p></td>
+<td><p>Baseline conductance, generally the maximum conductance following a single spike <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tauDecay</strong></p></td>
+<td><p>Time course of decay</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="8c55c6d6-5cbe-46a5-b6a4-49e16b696dbd" name="87bc3461-aa7b-4c67-b091-150824c7d00d" type="radio">
+</input><label class="tabbed-label" for="8c55c6d6-5cbe-46a5-b6a4-49e16b696dbd">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="f595764e-be2e-4236-b69f-c24716b53640" name="87bc3461-aa7b-4c67-b091-150824c7d00d" type="radio">
+</input><label class="tabbed-label" for="f595764e-be2e-4236-b69f-c24716b53640">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>g</strong></p></td>
+<td><p>Time varying conductance through the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="42bc9b95-56c0-404c-8eed-9548fea228c2" name="87bc3461-aa7b-4c67-b091-150824c7d00d" type="radio">
+</input><label class="tabbed-label" for="42bc9b95-56c0-404c-8eed-9548fea228c2">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="8f91e4bc-2947-482a-81f9-383cf3d44792" name="87bc3461-aa7b-4c67-b091-150824c7d00d" type="radio">
+</input><label class="tabbed-label" for="8f91e4bc-2947-482a-81f9-383cf3d44792">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="15cf532e-8c12-406c-8dc6-b58b261b53c8" name="87bc3461-aa7b-4c67-b091-150824c7d00d" type="radio">
+</input><label class="tabbed-label" for="15cf532e-8c12-406c-8dc6-b58b261b53c8">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>g</strong>: <a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a>  (exposed as <strong>g</strong>)</p>
+</dd>
+<dt><i><strong>On Start</strong></i></dt><dd><p><strong>g</strong> = 0</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>g</strong> = g + (weight * gbase)</p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>i</strong> = g * (erev - v) (exposed as <strong>i</strong>)</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>g</strong> /dt = -g / tauDecay</p>
+</dd>
+</dl>
+</div>
+<input id="a53b1970-ceb4-4157-b6cb-98f04705e8d4" name="87bc3461-aa7b-4c67-b091-150824c7d00d" type="radio">
+</input><label class="tabbed-label" for="a53b1970-ceb4-4157-b6cb-98f04705e8d4">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ExpOneSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ExpOneSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ExpOneSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gbase</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">erev</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau_decay</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="6ff9fa86-7caf-4147-ace3-a84fdc5f26f2" name="87bc3461-aa7b-4c67-b091-150824c7d00d" type="radio">
+</input><label class="tabbed-label" for="6ff9fa86-7caf-4147-ace3-a84fdc5f26f2">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;expOneSynapse</span> <span class="na">id=</span><span class="s">&quot;syn1&quot;</span> <span class="na">gbase=</span><span class="s">&quot;5nS&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span> <span class="na">tauDecay=</span><span class="s">&quot;3ms&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;expOneSynapse</span> <span class="na">id=</span><span class="s">&quot;syn2&quot;</span> <span class="na">gbase=</span><span class="s">&quot;10nS&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span> <span class="na">tauDecay=</span><span class="s">&quot;2ms&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;expOneSynapse</span> <span class="na">id=</span><span class="s">&quot;syn1&quot;</span> <span class="na">gbase=</span><span class="s">&quot;5nS&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span> <span class="na">tauDecay=</span><span class="s">&quot;3ms&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="alphasynapse">
+<span id="schema-alphasynapse"></span><h2>alphaSynapse<a class="headerlink" href="#alphasynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a></em></p>
+<p><i>Ohmic synapse model where rise time and decay time are both <strong>tau.</strong> Max conductance reached during this time ( assuming zero conductance before ) is <strong>gbase</strong> * <strong>weight.</strong>.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="9761321c-a37a-4ad6-a807-7d2f8ad2e0fc" name="f069fe0d-7389-436e-8c8f-0b9045f12188" type="radio">
+</input><label class="tabbed-label" for="9761321c-a37a-4ad6-a807-7d2f8ad2e0fc">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>erev</strong></p></td>
+<td><p>Reversal potential of the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>gbase</strong></p></td>
+<td><p>Baseline conductance, generally the maximum conductance following a single spike <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tau</strong></p></td>
+<td><p>Time course of rise/decay</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="4799dcf7-f539-4d37-ac6c-ba3823c86ddc" name="f069fe0d-7389-436e-8c8f-0b9045f12188" type="radio">
+</input><label class="tabbed-label" for="4799dcf7-f539-4d37-ac6c-ba3823c86ddc">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="7142d470-7670-46b8-9511-5e3101db5d03" name="f069fe0d-7389-436e-8c8f-0b9045f12188" type="radio">
+</input><label class="tabbed-label" for="7142d470-7670-46b8-9511-5e3101db5d03">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>g</strong></p></td>
+<td><p>Time varying conductance through the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="392a49ef-cd22-4c28-b6df-559fa0cb3a91" name="f069fe0d-7389-436e-8c8f-0b9045f12188" type="radio">
+</input><label class="tabbed-label" for="392a49ef-cd22-4c28-b6df-559fa0cb3a91">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="6160e23f-5bd0-4d19-9833-966d14f96e0c" name="f069fe0d-7389-436e-8c8f-0b9045f12188" type="radio">
+</input><label class="tabbed-label" for="6160e23f-5bd0-4d19-9833-966d14f96e0c">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="75df39f7-1228-4cab-a7b0-ee86026cca4a" name="f069fe0d-7389-436e-8c8f-0b9045f12188" type="radio">
+</input><label class="tabbed-label" for="75df39f7-1228-4cab-a7b0-ee86026cca4a">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>g</strong>: <a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a>  (exposed as <strong>g</strong>)</p>
+</dd>
+<dd><p><strong>A</strong>: <a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p>
+</dd>
+<dt><i><strong>On Start</strong></i></dt><dd><p><strong>g</strong> = 0</p>
+</dd>
+<dd><p><strong>A</strong> = 0</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>A</strong> = A + (gbase*weight)</p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>i</strong> = g * (erev - v) (exposed as <strong>i</strong>)</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>g</strong> /dt = (2.7182818284590451 * A - g)/tau</p>
+</dd>
+<dd><p>d <strong>A</strong> /dt = -A / tau</p>
+</dd>
+</dl>
+</div>
+<input id="312f0b6f-5079-4e49-a3e2-87e9bf890585" name="f069fe0d-7389-436e-8c8f-0b9045f12188" type="radio">
+</input><label class="tabbed-label" for="312f0b6f-5079-4e49-a3e2-87e9bf890585">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=AlphaSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">AlphaSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">AlphaSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gbase</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">erev</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="51fb1dbf-a746-4b1b-92cc-bcdc2d4a5b6d" name="f069fe0d-7389-436e-8c8f-0b9045f12188" type="radio">
+</input><label class="tabbed-label" for="51fb1dbf-a746-4b1b-92cc-bcdc2d4a5b6d">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;alphaSynapse</span> <span class="na">id=</span><span class="s">&quot;synalpha&quot;</span> <span class="na">gbase=</span><span class="s">&quot;0.5nS&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span> <span class="na">tau=</span><span class="s">&quot;2ms&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;notes&gt;</span>An alpha synapse with time for rise equal to decay.<span class="nt">&lt;/notes&gt;</span>
+    <span class="nt">&lt;/alphaSynapse&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exptwosynapse">
+<span id="schema-exptwosynapse"></span><h2>expTwoSynapse<a class="headerlink" href="#exptwosynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a></em></p>
+<p><i>Ohmic synapse model whose conductance waveform on receiving an event has a rise time of <strong>tauRise</strong> and a decay time of <strong>tauDecay.</strong> Max conductance reached during this time ( assuming zero conductance before ) is <strong>gbase</strong> * <strong>weight.</strong>.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="589afa68-a223-4b1b-bffa-ec8491341804" name="fcebda07-06f4-40b3-b43f-0ff2795c38a2" type="radio">
+</input><label class="tabbed-label" for="589afa68-a223-4b1b-bffa-ec8491341804">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>erev</strong></p></td>
+<td><p>Reversal potential of the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>gbase</strong></p></td>
+<td><p>Baseline conductance, generally the maximum conductance following a single spike <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tauDecay</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>tauRise</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="3af6a140-c0a2-456d-8075-00563e156737" name="fcebda07-06f4-40b3-b43f-0ff2795c38a2" type="radio">
+</input><label class="tabbed-label" for="3af6a140-c0a2-456d-8075-00563e156737">
+Derived parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>peakTime</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>waveformFactor</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="1d620025-df09-4edb-882a-1be7aa5eb7aa" name="fcebda07-06f4-40b3-b43f-0ff2795c38a2" type="radio">
+</input><label class="tabbed-label" for="1d620025-df09-4edb-882a-1be7aa5eb7aa">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="5c7874ad-7706-4d11-bdf1-cf46f1d60145" name="fcebda07-06f4-40b3-b43f-0ff2795c38a2" type="radio">
+</input><label class="tabbed-label" for="5c7874ad-7706-4d11-bdf1-cf46f1d60145">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>g</strong></p></td>
+<td><p>Time varying conductance through the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="a9c6cfac-256c-408b-8815-710071ecdcd2" name="fcebda07-06f4-40b3-b43f-0ff2795c38a2" type="radio">
+</input><label class="tabbed-label" for="a9c6cfac-256c-408b-8815-710071ecdcd2">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="02c6058c-9f76-46ab-b6d1-4d81f83ac993" name="fcebda07-06f4-40b3-b43f-0ff2795c38a2" type="radio">
+</input><label class="tabbed-label" for="02c6058c-9f76-46ab-b6d1-4d81f83ac993">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="63e9b755-bef3-41eb-8a7d-4d0abedd4fac" name="fcebda07-06f4-40b3-b43f-0ff2795c38a2" type="radio">
+</input><label class="tabbed-label" for="63e9b755-bef3-41eb-8a7d-4d0abedd4fac">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>A</strong>: Dimensionless</p>
+</dd>
+<dd><p><strong>B</strong>: Dimensionless</p>
+</dd>
+<dt><i><strong>On Start</strong></i></dt><dd><p><strong>A</strong> = 0</p>
+</dd>
+<dd><p><strong>B</strong> = 0</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>A</strong> = A + (weight * waveformFactor)</p>
+</dd>
+<dd><p>   <strong>B</strong> = B + (weight * waveformFactor)</p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>g</strong> = gbase * (B - A) (exposed as <strong>g</strong>)</p>
+</dd>
+<dd><p><strong>i</strong> = g * (erev - v) (exposed as <strong>i</strong>)</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>A</strong> /dt = -A / tauRise</p>
+</dd>
+<dd><p>d <strong>B</strong> /dt = -B / tauDecay</p>
+</dd>
+</dl>
+</div>
+<input id="d3f57970-8775-42db-99cc-63bdfe1e5035" name="fcebda07-06f4-40b3-b43f-0ff2795c38a2" type="radio">
+</input><label class="tabbed-label" for="d3f57970-8775-42db-99cc-63bdfe1e5035">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ExpTwoSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ExpTwoSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ExpTwoSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gbase</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">erev</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau_decay</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau_rise</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="e97c6445-6372-4265-aa56-889da104048b" name="fcebda07-06f4-40b3-b43f-0ff2795c38a2" type="radio">
+</input><label class="tabbed-label" for="e97c6445-6372-4265-aa56-889da104048b">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;expTwoSynapse</span> <span class="na">id=</span><span class="s">&quot;AMPA&quot;</span> <span class="na">gbase=</span><span class="s">&quot;0.5nS&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span> <span class="na">tauRise=</span><span class="s">&quot;1ms&quot;</span> <span class="na">tauDecay=</span><span class="s">&quot;2ms&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;expTwoSynapse</span> <span class="na">id=</span><span class="s">&quot;synInput&quot;</span> <span class="na">gbase=</span><span class="s">&quot;8nS&quot;</span> <span class="na">erev=</span><span class="s">&quot;20mV&quot;</span> <span class="na">tauRise=</span><span class="s">&quot;1ms&quot;</span> <span class="na">tauDecay=</span><span class="s">&quot;5ms&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;expTwoSynapse</span> <span class="na">id=</span><span class="s">&quot;synInputFast&quot;</span> <span class="na">gbase=</span><span class="s">&quot;1nS&quot;</span> <span class="na">erev=</span><span class="s">&quot;20mV&quot;</span> <span class="na">tauRise=</span><span class="s">&quot;0.2ms&quot;</span> <span class="na">tauDecay=</span><span class="s">&quot;1ms&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="expthreesynapse">
+<span id="schema-expthreesynapse"></span><h2>expThreeSynapse<a class="headerlink" href="#expthreesynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-baseconductancebasedsynapsetwo"><span class="std std-ref">baseConductanceBasedSynapseTwo</span></a></em></p>
+<p><i>Ohmic synapse similar to expTwoSynapse but consisting of two components that can differ in decay times and max conductances but share the same rise time.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="39edd479-4a8f-4f13-86bf-0ddf77b202f6" name="f5e2f002-7dc4-4cbd-9abf-ce3f61a2443d" type="radio">
+</input><label class="tabbed-label" for="39edd479-4a8f-4f13-86bf-0ddf77b202f6">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>erev</strong></p></td>
+<td><p>Reversal potential of the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapsetwo"><span class="std std-ref">baseConductanceBasedSynapseTwo</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>gbase1</strong></p></td>
+<td><p>Baseline conductance 1 <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapsetwo"><span class="std std-ref">baseConductanceBasedSynapseTwo</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>gbase2</strong></p></td>
+<td><p>Baseline conductance 2 <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapsetwo"><span class="std std-ref">baseConductanceBasedSynapseTwo</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>tauDecay1</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tauDecay2</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>tauRise</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="bd7851a4-cad4-4a15-999e-7fcac5f4b8e4" name="f5e2f002-7dc4-4cbd-9abf-ce3f61a2443d" type="radio">
+</input><label class="tabbed-label" for="bd7851a4-cad4-4a15-999e-7fcac5f4b8e4">
+Derived parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>peakTime1</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>peakTime2</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>waveformFactor1</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>waveformFactor2</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="169855d5-9015-4412-8939-339dc52cd21e" name="f5e2f002-7dc4-4cbd-9abf-ce3f61a2443d" type="radio">
+</input><label class="tabbed-label" for="169855d5-9015-4412-8939-339dc52cd21e">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="0b99c7f1-d1cb-4d0f-b5ee-494526743b33" name="f5e2f002-7dc4-4cbd-9abf-ce3f61a2443d" type="radio">
+</input><label class="tabbed-label" for="0b99c7f1-d1cb-4d0f-b5ee-494526743b33">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>g</strong></p></td>
+<td><p>Time varying conductance through the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapsetwo"><span class="std std-ref">baseConductanceBasedSynapseTwo</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="8250f6df-d2a2-42a1-b6cd-ee9936d7581e" name="f5e2f002-7dc4-4cbd-9abf-ce3f61a2443d" type="radio">
+</input><label class="tabbed-label" for="8250f6df-d2a2-42a1-b6cd-ee9936d7581e">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="6cf9b551-8868-46f3-ae2a-ecd3c0286c00" name="f5e2f002-7dc4-4cbd-9abf-ce3f61a2443d" type="radio">
+</input><label class="tabbed-label" for="6cf9b551-8868-46f3-ae2a-ecd3c0286c00">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="8e39afb8-afa1-4ebe-8f7d-2b87a1f3df3f" name="f5e2f002-7dc4-4cbd-9abf-ce3f61a2443d" type="radio">
+</input><label class="tabbed-label" for="8e39afb8-afa1-4ebe-8f7d-2b87a1f3df3f">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>A</strong>: Dimensionless</p>
+</dd>
+<dd><p><strong>B</strong>: Dimensionless</p>
+</dd>
+<dd><p><strong>C</strong>: Dimensionless</p>
+</dd>
+<dt><i><strong>On Start</strong></i></dt><dd><p><strong>A</strong> = 0</p>
+</dd>
+<dd><p><strong>B</strong> = 0</p>
+</dd>
+<dd><p><strong>C</strong> = 0</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>A</strong> = A + (gbase1<em>weight * waveformFactor1 + gbase2</em>weight*waveformFactor2 )/(gbase1+gbase2)</p>
+</dd>
+<dd><p>   <strong>B</strong> = B + (weight * waveformFactor1)</p>
+</dd>
+<dd><p>   <strong>C</strong> = C + (weight * waveformFactor2)</p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>g</strong> = gbase1*(B - A) + gbase2*(C-A) (exposed as <strong>g</strong>)</p>
+</dd>
+<dd><p><strong>i</strong> = g * (erev - v) (exposed as <strong>i</strong>)</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>A</strong> /dt = -A / tauRise</p>
+</dd>
+<dd><p>d <strong>B</strong> /dt = -B / tauDecay1</p>
+</dd>
+<dd><p>d <strong>C</strong> /dt = -C / tauDecay2</p>
+</dd>
+</dl>
+</div>
+<input id="0e767f4a-c51a-4da3-aeb0-8cc2ac60054a" name="f5e2f002-7dc4-4cbd-9abf-ce3f61a2443d" type="radio">
+</input><label class="tabbed-label" for="0e767f4a-c51a-4da3-aeb0-8cc2ac60054a">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ExpThreeSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ExpThreeSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ExpThreeSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gbase1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gbase2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">erev</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau_decay1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau_decay2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau_rise</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="25dcd34f-dc28-4c04-b75d-8a8377fa38bb" name="f5e2f002-7dc4-4cbd-9abf-ce3f61a2443d" type="radio">
+</input><label class="tabbed-label" for="25dcd34f-dc28-4c04-b75d-8a8377fa38bb">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;expThreeSynapse</span> <span class="na">id=</span><span class="s">&quot;synInputFastTwo&quot;</span> <span class="na">gbase1=</span><span class="s">&quot;1.5nS&quot;</span> <span class="na">tauRise=</span><span class="s">&quot;0.1ms&quot;</span> <span class="na">tauDecay1=</span><span class="s">&quot;0.7ms&quot;</span> <span class="na">gbase2=</span><span class="s">&quot;0.5nS&quot;</span> <span class="na">tauDecay2=</span><span class="s">&quot;2.5ms&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;expThreeSynapse</span> <span class="na">id=</span><span class="s">&quot;AMPA&quot;</span> <span class="na">gbase1=</span><span class="s">&quot;1.5nS&quot;</span> <span class="na">tauRise=</span><span class="s">&quot;0.1ms&quot;</span> <span class="na">tauDecay1=</span><span class="s">&quot;0.7ms&quot;</span> <span class="na">gbase2=</span><span class="s">&quot;0.5nS&quot;</span> <span class="na">tauDecay2=</span><span class="s">&quot;2.5ms&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;notes&gt;</span>A synapse consisting of one rise and two decay time courses.<span class="nt">&lt;/notes&gt;</span>
+    <span class="nt">&lt;/expThreeSynapse&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="baseblockmechanism">
+<span id="schema-baseblockmechanism"></span><h2><em>baseBlockMechanism</em><a class="headerlink" href="#baseblockmechanism" title="Permalink to this headline">¶</a></h2>
+<p><i>Base of any ComponentType which produces a varying scaling ( or blockage ) of synaptic strength of magnitude <strong>scaling</strong>.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="e6783666-e711-4a20-9dd3-19f391c99e6b" name="39e1c23e-69e6-4100-b3bc-b03b53980646" type="radio">
+</input><label class="tabbed-label" for="e6783666-e711-4a20-9dd3-19f391c99e6b">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>blockFactor</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="voltageconcdepblockmechanism">
+<span id="schema-voltageconcdepblockmechanism"></span><h2>voltageConcDepBlockMechanism<a class="headerlink" href="#voltageconcdepblockmechanism" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-baseblockmechanism"><span class="std std-ref">baseBlockMechanism</span></a></em></p>
+<p><i>Synaptic blocking mechanism which varys with membrane potential across the synapse, e.g. in NMDA receptor mediated synapses.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="b04fc9da-9a31-4e61-9b90-62a742b90bd9" name="4aad0090-a7dc-4141-937f-4f73a3026e4b" type="radio">
+</input><label class="tabbed-label" for="b04fc9da-9a31-4e61-9b90-62a742b90bd9">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>blockConcentration</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-concentration"><span class="std std-ref">concentration</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>scalingConc</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-concentration"><span class="std std-ref">concentration</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>scalingVolt</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="59c1482d-6f11-4413-9c01-1fc350e0dcf5" name="4aad0090-a7dc-4141-937f-4f73a3026e4b" type="radio">
+</input><label class="tabbed-label" for="59c1482d-6f11-4413-9c01-1fc350e0dcf5">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>species</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="da6d8bfc-a2e4-4650-a328-1d05563f5c3d" name="4aad0090-a7dc-4141-937f-4f73a3026e4b" type="radio">
+</input><label class="tabbed-label" for="da6d8bfc-a2e4-4650-a328-1d05563f5c3d">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>blockFactor</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-baseblockmechanism"><span class="std std-ref">baseBlockMechanism</span></a>)</em></p></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="f081ecd3-2b78-42a2-bdd5-e8684af1b36b" name="4aad0090-a7dc-4141-937f-4f73a3026e4b" type="radio">
+</input><label class="tabbed-label" for="f081ecd3-2b78-42a2-bdd5-e8684af1b36b">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="cbd124dd-b827-4280-b674-ca54c33e1462" name="4aad0090-a7dc-4141-937f-4f73a3026e4b" type="radio">
+</input><label class="tabbed-label" for="cbd124dd-b827-4280-b674-ca54c33e1462">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>blockFactor</strong> = 1/(1 + (blockConcentration / scalingConc)* exp(-1 * (v / scalingVolt))) (exposed as <strong>blockFactor</strong>)</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="baseplasticitymechanism">
+<span id="schema-baseplasticitymechanism"></span><h2><em>basePlasticityMechanism</em><a class="headerlink" href="#baseplasticitymechanism" title="Permalink to this headline">¶</a></h2>
+<p><i>Base plasticity mechanism.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="1004a519-20dc-4893-9261-e52dfda6378f" name="58b86dde-ffb0-4448-99a9-1ea9bb65daaf" type="radio">
+</input><label class="tabbed-label" for="1004a519-20dc-4893-9261-e52dfda6378f">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>plasticityFactor</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="ea3777ec-d383-4495-aeed-ac5d6c657d26" name="58b86dde-ffb0-4448-99a9-1ea9bb65daaf" type="radio">
+</input><label class="tabbed-label" for="ea3777ec-d383-4495-aeed-ac5d6c657d26">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p>This is where the plasticity mechanism receives spike events from the parent synapse.</p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="tsodyksmarkramdepmechanism">
+<span id="schema-tsodyksmarkramdepmechanism"></span><h2>tsodyksMarkramDepMechanism<a class="headerlink" href="#tsodyksmarkramdepmechanism" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-baseplasticitymechanism"><span class="std std-ref">basePlasticityMechanism</span></a></em></p>
+<p><i>Depression-only Tsodyks-Markram model, as in Tsodyks and Markram 1997.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="d3fa8c2f-c514-4389-bd9c-7f57dbcc0eb2" name="162318e7-a1d8-46f1-96ab-7205acb00c42" type="radio">
+</input><label class="tabbed-label" for="d3fa8c2f-c514-4389-bd9c-7f57dbcc0eb2">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>initReleaseProb</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>tauRec</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="d383a29b-1610-4472-9daf-840d956f0814" name="162318e7-a1d8-46f1-96ab-7205acb00c42" type="radio">
+</input><label class="tabbed-label" for="d383a29b-1610-4472-9daf-840d956f0814">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>plasticityFactor</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-baseplasticitymechanism"><span class="std std-ref">basePlasticityMechanism</span></a>)</em></p></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="de6c0df3-5285-4a78-830e-2a8b172666e7" name="162318e7-a1d8-46f1-96ab-7205acb00c42" type="radio">
+</input><label class="tabbed-label" for="de6c0df3-5285-4a78-830e-2a8b172666e7">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p>This is where the plasticity mechanism receives spike events from the parent synapse. <em>(from <a class="reference internal" href="#schema-baseplasticitymechanism"><span class="std std-ref">basePlasticityMechanism</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="6c335c70-f8aa-42ba-9626-f9ebc9df6c7b" name="162318e7-a1d8-46f1-96ab-7205acb00c42" type="radio">
+</input><label class="tabbed-label" for="6c335c70-f8aa-42ba-9626-f9ebc9df6c7b">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>Structure</strong></i></dt><dd><p>WITH <strong>parent</strong> AS <strong>a</strong></p>
+</dd>
+<dd><p>WITH <strong>this</strong> AS <strong>b</strong></p>
+</dd>
+<dd><p>EVENT CONNECTION from <strong>a</strong> TO  <strong>b</strong></p>
+</dd>
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>R</strong>: Dimensionless</p>
+</dd>
+<dt><i><strong>On Start</strong></i></dt><dd><p><strong>R</strong> = 1</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>R</strong> = R * (1 - U)</p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>U</strong> = initReleaseProb</p>
+</dd>
+<dd><p><strong>plasticityFactor</strong> = R * U (exposed as <strong>plasticityFactor</strong>)</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>R</strong> /dt = (1 - R) / tauRec</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="tsodyksmarkramdepfacmechanism">
+<span id="schema-tsodyksmarkramdepfacmechanism"></span><h2>tsodyksMarkramDepFacMechanism<a class="headerlink" href="#tsodyksmarkramdepfacmechanism" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-baseplasticitymechanism"><span class="std std-ref">basePlasticityMechanism</span></a></em></p>
+<p><i>Full Tsodyks-Markram STP model with both depression and facilitation, as in Tsodyks, Pawelzik and Markram 1998.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="f98e3c77-12d8-42a9-ac18-c71554caaa54" name="b84b868c-d044-41f5-9411-56628fd27f84" type="radio">
+</input><label class="tabbed-label" for="f98e3c77-12d8-42a9-ac18-c71554caaa54">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>initReleaseProb</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>tauFac</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tauRec</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="42499cff-4ee3-4f64-a873-bf0d71acc460" name="b84b868c-d044-41f5-9411-56628fd27f84" type="radio">
+</input><label class="tabbed-label" for="42499cff-4ee3-4f64-a873-bf0d71acc460">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>plasticityFactor</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-baseplasticitymechanism"><span class="std std-ref">basePlasticityMechanism</span></a>)</em></p></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="0bf0ade7-292b-4491-b3a2-f13602455195" name="b84b868c-d044-41f5-9411-56628fd27f84" type="radio">
+</input><label class="tabbed-label" for="0bf0ade7-292b-4491-b3a2-f13602455195">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p>This is where the plasticity mechanism receives spike events from the parent synapse. <em>(from <a class="reference internal" href="#schema-baseplasticitymechanism"><span class="std std-ref">basePlasticityMechanism</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="67c9f75c-8595-47e1-99b5-d563b7bfdbc7" name="b84b868c-d044-41f5-9411-56628fd27f84" type="radio">
+</input><label class="tabbed-label" for="67c9f75c-8595-47e1-99b5-d563b7bfdbc7">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>Structure</strong></i></dt><dd><p>WITH <strong>parent</strong> AS <strong>a</strong></p>
+</dd>
+<dd><p>WITH <strong>this</strong> AS <strong>b</strong></p>
+</dd>
+<dd><p>EVENT CONNECTION from <strong>a</strong> TO  <strong>b</strong></p>
+</dd>
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>R</strong>: Dimensionless</p>
+</dd>
+<dd><p><strong>U</strong>: Dimensionless</p>
+</dd>
+<dt><i><strong>On Start</strong></i></dt><dd><p><strong>R</strong> = 1</p>
+</dd>
+<dd><p><strong>U</strong> = initReleaseProb</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>R</strong> = R * (1 - U)</p>
+</dd>
+<dd><p>   <strong>U</strong> = U + initReleaseProb * (1 - U)</p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>plasticityFactor</strong> = R * U (exposed as <strong>plasticityFactor</strong>)</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>R</strong> /dt = (1 - R) / tauRec</p>
+</dd>
+<dd><p>d <strong>U</strong> /dt = (initReleaseProb - U) / tauFac</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="blockingplasticsynapse">
+<span id="schema-blockingplasticsynapse"></span><h2>blockingPlasticSynapse<a class="headerlink" href="#blockingplasticsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a></p>
+<p><i>Biexponential synapse that allows for optional block and plasticity mechanisms, which can be expressed as child elements.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="1a4bda4e-42d6-42f5-aa81-201271adf60c" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="1a4bda4e-42d6-42f5-aa81-201271adf60c">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>erev</strong></p></td>
+<td><p>Reversal potential of the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>gbase</strong></p></td>
+<td><p>Baseline conductance, generally the maximum conductance following a single spike <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tauDecay</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>tauRise</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="fef0a7e2-0e6c-4ed9-aab8-e8d6cb4dc4f0" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="fef0a7e2-0e6c-4ed9-aab8-e8d6cb4dc4f0">
+Derived parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>peakTime</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>waveformFactor</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a>)</em></p></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="aec31d9b-4869-4dff-b1f9-8ab61aa3aa40" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="aec31d9b-4869-4dff-b1f9-8ab61aa3aa40">
+Children list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>plasticityMechanisms</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-baseplasticitymechanism"><span class="std std-ref">basePlasticityMechanism</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>blockMechanisms</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-baseblockmechanism"><span class="std std-ref">baseBlockMechanism</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="ae1b7f2f-27af-400b-a218-4d5c5a5022ce" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="ae1b7f2f-27af-400b-a218-4d5c5a5022ce">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="becae5ba-d5e7-44df-8380-0572956f99f0" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="becae5ba-d5e7-44df-8380-0572956f99f0">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>g</strong></p></td>
+<td><p>Time varying conductance through the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="0bd0a94f-9711-4539-8a21-c8f32cc69010" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="0bd0a94f-9711-4539-8a21-c8f32cc69010">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="9a8dac18-6f96-4bb9-ab92-2015b9548307" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="9a8dac18-6f96-4bb9-ab92-2015b9548307">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>relay</strong></p></td>
+<td><p>Used to relay incoming spikes to child plasticity mechanism</p></td>
+<td><p>Direction: out</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="76cff9b5-da81-4496-8229-6cfbd00a46a5" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="76cff9b5-da81-4496-8229-6cfbd00a46a5">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>A</strong>: Dimensionless</p>
+</dd>
+<dd><p><strong>B</strong>: Dimensionless</p>
+</dd>
+<dt><i><strong>On Start</strong></i></dt><dd><p><strong>A</strong> = 0</p>
+</dd>
+<dd><p><strong>B</strong> = 0</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>A</strong> = A + (weight * plasticityFactor * waveformFactor)</p>
+</dd>
+<dd><p>   <strong>B</strong> = B + (weight * plasticityFactor * waveformFactor)</p>
+</dd>
+<dd><p>   EVENT OUT on port: <strong>relay</strong></p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>plasticityFactor</strong> = plasticityMechanisms[*]-&gt;plasticityFactor(reduce method: multiply)</p>
+</dd>
+<dd><p><strong>blockFactor</strong> = blockMechanisms[*]-&gt;blockFactor(reduce method: multiply)</p>
+</dd>
+<dd><p><strong>g</strong> = blockFactor * gbase * (B - A) (exposed as <strong>g</strong>)</p>
+</dd>
+<dd><p><strong>i</strong> = g * (erev - v) (exposed as <strong>i</strong>)</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>A</strong> /dt = -A / tauRise</p>
+</dd>
+<dd><p>d <strong>B</strong> /dt = -B / tauDecay</p>
+</dd>
+</dl>
+</div>
+<input id="67295820-dbf4-4fdd-b52f-e195c130a156" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="67295820-dbf4-4fdd-b52f-e195c130a156">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=BlockingPlasticSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">BlockingPlasticSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">BlockingPlasticSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gbase</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">erev</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau_decay</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau_rise</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plasticity_mechanism</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">block_mechanism</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="680d35fb-4d16-41fc-81f5-de31477cc4b6" name="1860fb98-9f40-4aac-baf4-a69218fb7433" type="radio">
+</input><label class="tabbed-label" for="680d35fb-4d16-41fc-81f5-de31477cc4b6">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;blockingPlasticSynapse</span> <span class="na">id=</span><span class="s">&quot;NMDA&quot;</span> <span class="na">gbase=</span><span class="s">&quot;.8nS&quot;</span> <span class="na">tauRise=</span><span class="s">&quot;1e-3s&quot;</span> <span class="na">tauDecay=</span><span class="s">&quot;13.3333e-3s&quot;</span> <span class="na">erev=</span><span class="s">&quot;0V&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;blockMechanism</span> <span class="na">type=</span><span class="s">&quot;voltageConcDepBlockMechanism&quot;</span> <span class="na">species=</span><span class="s">&quot;mg&quot;</span> <span class="na">blockConcentration=</span><span class="s">&quot;1.2mM&quot;</span> <span class="na">scalingConc=</span><span class="s">&quot;1.9205441817997078mM&quot;</span> <span class="na">scalingVolt=</span><span class="s">&quot;0.016129032258064516V&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/blockingPlasticSynapse&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;blockingPlasticSynapse</span> <span class="na">id=</span><span class="s">&quot;blockStpSynDep&quot;</span> <span class="na">gbase=</span><span class="s">&quot;1nS&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span> <span class="na">tauRise=</span><span class="s">&quot;0.1ms&quot;</span> <span class="na">tauDecay=</span><span class="s">&quot;2ms&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;notes&gt;</span>A biexponential blocking synapse, with STD.<span class="nt">&lt;/notes&gt;</span>
+        <span class="nt">&lt;plasticityMechanism</span> <span class="na">type=</span><span class="s">&quot;tsodyksMarkramDepMechanism&quot;</span> <span class="na">initReleaseProb=</span><span class="s">&quot;0.5&quot;</span> <span class="na">tauRec=</span><span class="s">&quot;120 ms&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;blockMechanism</span> <span class="na">type=</span><span class="s">&quot;voltageConcDepBlockMechanism&quot;</span> <span class="na">species=</span><span class="s">&quot;mg&quot;</span> <span class="na">blockConcentration=</span><span class="s">&quot;1.2 mM&quot;</span> <span class="na">scalingConc=</span><span class="s">&quot;1.920544 mM&quot;</span> <span class="na">scalingVolt=</span><span class="s">&quot;16.129 mV&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/blockingPlasticSynapse&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;blockingPlasticSynapse</span> <span class="na">id=</span><span class="s">&quot;blockStpSynDepFac&quot;</span> <span class="na">gbase=</span><span class="s">&quot;1nS&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span> <span class="na">tauRise=</span><span class="s">&quot;0.1ms&quot;</span> <span class="na">tauDecay=</span><span class="s">&quot;2ms&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;notes&gt;</span>A biexponential blocking synapse with short term
+            depression and facilitation.<span class="nt">&lt;/notes&gt;</span>
+        <span class="nt">&lt;plasticityMechanism</span> <span class="na">type=</span><span class="s">&quot;tsodyksMarkramDepFacMechanism&quot;</span> <span class="na">initReleaseProb=</span><span class="s">&quot;0.5&quot;</span> <span class="na">tauRec=</span><span class="s">&quot;120 ms&quot;</span> <span class="na">tauFac=</span><span class="s">&quot;10 ms&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;blockMechanism</span> <span class="na">type=</span><span class="s">&quot;voltageConcDepBlockMechanism&quot;</span> <span class="na">species=</span><span class="s">&quot;mg&quot;</span> <span class="na">blockConcentration=</span><span class="s">&quot;1.2 mM&quot;</span> <span class="na">scalingConc=</span><span class="s">&quot;1.920544 mM&quot;</span> <span class="na">scalingVolt=</span><span class="s">&quot;16.129 mV&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/blockingPlasticSynapse&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="doublesynapse">
+<span id="schema-doublesynapse"></span><h2>doubleSynapse<a class="headerlink" href="#doublesynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a></em></p>
+<p><i>Synapse consisting of two independent synaptic mechanisms ( e.g. AMPA-R and NMDA-R ), which can be easily colocated in connections.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="f585331e-7241-4d0b-8a9f-cf88a3c830d8" name="2cb37536-0489-44d7-bec7-d607f7eece85" type="radio">
+</input><label class="tabbed-label" for="f585331e-7241-4d0b-8a9f-cf88a3c830d8">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>synapse1Path</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>synapse2Path</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="87ae4edd-f2a1-4e3c-b1f0-5d9b16298aa7" name="2cb37536-0489-44d7-bec7-d607f7eece85" type="radio">
+</input><label class="tabbed-label" for="87ae4edd-f2a1-4e3c-b1f0-5d9b16298aa7">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>synapse1</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>synapse2</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="e228ce61-421f-4d11-9ea3-c9f98d8fb09c" name="2cb37536-0489-44d7-bec7-d607f7eece85" type="radio">
+</input><label class="tabbed-label" for="e228ce61-421f-4d11-9ea3-c9f98d8fb09c">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="3a8f835c-59a9-4231-a176-ec6d9adbcdf8" name="2cb37536-0489-44d7-bec7-d607f7eece85" type="radio">
+</input><label class="tabbed-label" for="3a8f835c-59a9-4231-a176-ec6d9adbcdf8">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="23364660-0dd0-48dd-b99c-c688145ed519" name="2cb37536-0489-44d7-bec7-d607f7eece85" type="radio">
+</input><label class="tabbed-label" for="23364660-0dd0-48dd-b99c-c688145ed519">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="1957778b-9004-48a5-b384-61e5208528e9" name="2cb37536-0489-44d7-bec7-d607f7eece85" type="radio">
+</input><label class="tabbed-label" for="1957778b-9004-48a5-b384-61e5208528e9">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>relay</strong></p></td>
+<td><p>Used to relay incoming spikes to child mechanisms</p></td>
+<td><p>Direction: out</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="86a0a6b0-14b2-4603-a8c6-62bab4a28e76" name="2cb37536-0489-44d7-bec7-d607f7eece85" type="radio">
+</input><label class="tabbed-label" for="86a0a6b0-14b2-4603-a8c6-62bab4a28e76">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>Structure</strong></i></dt><dd><p>WITH <strong>this</strong> AS <strong>a</strong></p>
+</dd>
+<dd><p>WITH <strong>synapse1Path</strong> AS <strong>b</strong></p>
+</dd>
+<dd><p>WITH <strong>synapse2Path</strong> AS <strong>c</strong></p>
+</dd>
+<dd><p>CHILD INSTANCE: <strong>synapse1</strong></p>
+</dd>
+<dd><p>CHILD INSTANCE: <strong>synapse2</strong></p>
+</dd>
+<dd><p>EVENT CONNECTION from <strong>a</strong> TO  <strong>c</strong></p>
+</dd>
+<dd><p>EVENT CONNECTION from <strong>a</strong> TO  <strong>b</strong></p>
+</dd>
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>weightFactor</strong>: Dimensionless</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>weightFactor</strong> = weight</p>
+</dd>
+<dd><p>   EVENT OUT on port: <strong>relay</strong></p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>i1</strong> = synapse1-&gt;i</p>
+</dd>
+<dd><p><strong>i2</strong> = synapse2-&gt;i</p>
+</dd>
+<dd><p><strong>i</strong> = weightFactor * (i1 + i2) (exposed as <strong>i</strong>)</p>
+</dd>
+</dl>
+</div>
+<input id="5c43251d-244a-417f-bf13-842be732c738" name="2cb37536-0489-44d7-bec7-d607f7eece85" type="radio">
+</input><label class="tabbed-label" for="5c43251d-244a-417f-bf13-842be732c738">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=DoubleSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">DoubleSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">DoubleSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">synapse1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">synapse2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">synapse1_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">synapse2_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="bcf4af78-0fd9-402e-91fa-29baec7015e2" name="2cb37536-0489-44d7-bec7-d607f7eece85" type="radio">
+</input><label class="tabbed-label" for="bcf4af78-0fd9-402e-91fa-29baec7015e2">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;doubleSynapse</span> <span class="na">id=</span><span class="s">&quot;AMPA_NMDA&quot;</span> <span class="na">synapse1=</span><span class="s">&quot;AMPA&quot;</span> <span class="na">synapse1Path=</span><span class="s">&quot;./AMPA&quot;</span> <span class="na">synapse2=</span><span class="s">&quot;NMDA&quot;</span> <span class="na">synapse2Path=</span><span class="s">&quot;./NMDA&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;notes&gt;</span>A single &quot;synapse&quot; which contains both AMPA and NMDA. It is planned that the need for extra synapse1Path/synapse2Path attributes can be removed in later versions.<span class="nt">&lt;/notes&gt;</span>
+    <span class="nt">&lt;/doubleSynapse&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="stdpsynapse">
+<span id="schema-stdpsynapse"></span><h2>stdpSynapse<a class="headerlink" href="#stdpsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a></p>
+<p><i>Spike timing dependent plasticity mechanism, NOTE: EXAMPLE NOT YET WORKING!!!</i></p>
+<p><a class="reference external" href="https://bioportal.bioontology.org/ontologies/CNO/?p=classes&amp;conceptid=cno_0000034">Bioportal entry for Computational Neuroscience Ontology related to stdpSynapse.</a></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="a7a51045-7bbe-476c-86d7-367b941bd301" name="dfa06c49-a37f-46a8-ba27-f91dfe7df7fb" type="radio">
+</input><label class="tabbed-label" for="a7a51045-7bbe-476c-86d7-367b941bd301">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>erev</strong></p></td>
+<td><p>Reversal potential of the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>gbase</strong></p></td>
+<td><p>Baseline conductance, generally the maximum conductance following a single spike <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tauDecay</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>tauRise</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="a5e214c3-b1b3-44d4-9e67-aa233dc72f5a" name="dfa06c49-a37f-46a8-ba27-f91dfe7df7fb" type="radio">
+</input><label class="tabbed-label" for="a5e214c3-b1b3-44d4-9e67-aa233dc72f5a">
+Derived parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>peakTime</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>waveformFactor</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-exptwosynapse"><span class="std std-ref">expTwoSynapse</span></a>)</em></p></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="a1afa580-adb3-4638-9646-b1274b23776e" name="dfa06c49-a37f-46a8-ba27-f91dfe7df7fb" type="radio">
+</input><label class="tabbed-label" for="a1afa580-adb3-4638-9646-b1274b23776e">
+Constants</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>tsinceRate</strong> = 1</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>longTime</strong> = 1000s</p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="246cea3d-2717-438e-a3f6-2e948cec9b75" name="dfa06c49-a37f-46a8-ba27-f91dfe7df7fb" type="radio">
+</input><label class="tabbed-label" for="246cea3d-2717-438e-a3f6-2e948cec9b75">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>M</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>P</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>g</strong></p></td>
+<td><p>Time varying conductance through the synapse <em>(from <a class="reference internal" href="#schema-baseconductancebasedsynapse"><span class="std std-ref">baseConductanceBasedSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tsince</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="43979cd6-5bf2-4789-92d8-f3cc77f39bab" name="dfa06c49-a37f-46a8-ba27-f91dfe7df7fb" type="radio">
+</input><label class="tabbed-label" for="43979cd6-5bf2-4789-92d8-f3cc77f39bab">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td><p>The current may vary with the voltage exposed by the ComponentType on which this is placed <em>(from <a class="reference internal" href="#schema-basevoltagedepsynapse"><span class="std std-ref">baseVoltageDepSynapse</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="71a5b62a-f808-47de-9ae3-0c2cc15a2e35" name="dfa06c49-a37f-46a8-ba27-f91dfe7df7fb" type="radio">
+</input><label class="tabbed-label" for="71a5b62a-f808-47de-9ae3-0c2cc15a2e35">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="bf7ad7ab-42db-417e-8f5e-fb2d86f8210d" name="dfa06c49-a37f-46a8-ba27-f91dfe7df7fb" type="radio">
+</input><label class="tabbed-label" for="bf7ad7ab-42db-417e-8f5e-fb2d86f8210d">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>A</strong>: Dimensionless</p>
+</dd>
+<dd><p><strong>B</strong>: Dimensionless</p>
+</dd>
+<dd><p><strong>M</strong>: Dimensionless  (exposed as <strong>M</strong>)</p>
+</dd>
+<dd><p><strong>P</strong>: Dimensionless  (exposed as <strong>P</strong>)</p>
+</dd>
+<dd><p><strong>tsince</strong>: <a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a>  (exposed as <strong>tsince</strong>)</p>
+</dd>
+<dt><i><strong>On Start</strong></i></dt><dd><p><strong>A</strong> = 0</p>
+</dd>
+<dd><p><strong>B</strong> = 0</p>
+</dd>
+<dd><p><strong>M</strong> = 1</p>
+</dd>
+<dd><p><strong>P</strong> = 1</p>
+</dd>
+<dd><p><strong>tsince</strong> = longTime</p>
+</dd>
+<dt><i><strong>On Events</strong></i></dt><dd><p>EVENT IN on port: <strong>in</strong></p>
+</dd>
+<dd><p>   <strong>A</strong> = A + waveformFactor</p>
+</dd>
+<dd><p>   <strong>B</strong> = B + waveformFactor</p>
+</dd>
+<dd><p>   <strong>tsince</strong> = 0</p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>g</strong> = gbase * (B - A) (exposed as <strong>g</strong>)</p>
+</dd>
+<dd><p><strong>i</strong> = g * (erev - v) (exposed as <strong>i</strong>)</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>A</strong> /dt = -A / tauRise</p>
+</dd>
+<dd><p>d <strong>B</strong> /dt = -B / tauDecay</p>
+</dd>
+<dd><p>d <strong>tsince</strong> /dt = tsinceRate</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="gapjunction">
+<span id="schema-gapjunction"></span><h2>gapJunction<a class="headerlink" href="#gapjunction" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a></em></p>
+<p><i>Gap junction/single electrical connection.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="28f023cf-831f-4faa-8a1b-e778a1e405fb" name="50b79a7f-5179-4055-aeb2-3f3bc7d42f7a" type="radio">
+</input><label class="tabbed-label" for="28f023cf-831f-4faa-8a1b-e778a1e405fb">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>conductance</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="dedee42f-21f8-4b39-88d9-807c30ae7c82" name="50b79a7f-5179-4055-aeb2-3f3bc7d42f7a" type="radio">
+</input><label class="tabbed-label" for="dedee42f-21f8-4b39-88d9-807c30ae7c82">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="958b20e3-4f9c-490b-bb57-cb57b8f11cf1" name="50b79a7f-5179-4055-aeb2-3f3bc7d42f7a" type="radio">
+</input><label class="tabbed-label" for="958b20e3-4f9c-490b-bb57-cb57b8f11cf1">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="12e59552-77f5-49cf-a775-330ad0e7f926" name="50b79a7f-5179-4055-aeb2-3f3bc7d42f7a" type="radio">
+</input><label class="tabbed-label" for="12e59552-77f5-49cf-a775-330ad0e7f926">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="a5862444-1fcf-4687-a2fe-0022381ca9ca" name="50b79a7f-5179-4055-aeb2-3f3bc7d42f7a" type="radio">
+</input><label class="tabbed-label" for="a5862444-1fcf-4687-a2fe-0022381ca9ca">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="6af0dfb1-99a6-4664-9ddc-e7d631331740" name="50b79a7f-5179-4055-aeb2-3f3bc7d42f7a" type="radio">
+</input><label class="tabbed-label" for="6af0dfb1-99a6-4664-9ddc-e7d631331740">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>vpeer</strong> = peer-&gt;v</p>
+</dd>
+<dd><p><strong>i</strong> = weight * conductance * (vpeer - v) (exposed as <strong>i</strong>)</p>
+</dd>
+</dl>
+</div>
+<input id="c641af4e-0f30-4bbe-8a24-79a6f719aeaa" name="50b79a7f-5179-4055-aeb2-3f3bc7d42f7a" type="radio">
+</input><label class="tabbed-label" for="c641af4e-0f30-4bbe-8a24-79a6f719aeaa">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=GapJunction" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">GapJunction</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">GapJunction</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">conductance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="0245c988-eeb3-40c2-b819-c0bbb49e0af8" name="50b79a7f-5179-4055-aeb2-3f3bc7d42f7a" type="radio">
+</input><label class="tabbed-label" for="0245c988-eeb3-40c2-b819-c0bbb49e0af8">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gapJunction</span> <span class="na">id=</span><span class="s">&quot;gj1&quot;</span> <span class="na">conductance=</span><span class="s">&quot;10pS&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gapJunction</span> <span class="na">id=</span><span class="s">&quot;gj1&quot;</span> <span class="na">conductance=</span><span class="s">&quot;10pS&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="basegradedsynapse">
+<span id="schema-basegradedsynapse"></span><h2><em>baseGradedSynapse</em><a class="headerlink" href="#basegradedsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a></em></p>
+<p><i>Base type for graded synapses.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="1a18c4aa-47b6-4cea-8a81-78b44c211ead" name="7e8acf18-bdf2-49d2-a8cf-0e784a7bdb7d" type="radio">
+</input><label class="tabbed-label" for="1a18c4aa-47b6-4cea-8a81-78b44c211ead">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="8f28319d-03d8-4ad0-a6a6-9dab90747d17" name="7e8acf18-bdf2-49d2-a8cf-0e784a7bdb7d" type="radio">
+</input><label class="tabbed-label" for="8f28319d-03d8-4ad0-a6a6-9dab90747d17">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="silentsynapse">
+<span id="schema-silentsynapse"></span><h2>silentSynapse<a class="headerlink" href="#silentsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basegradedsynapse"><span class="std std-ref">baseGradedSynapse</span></a></em></p>
+<p><i>Dummy synapse which emits no current. Used as presynaptic endpoint for analog synaptic connection.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="905221bd-872c-4eeb-be99-b2fd3b71144d" name="8b364c07-7e0d-4626-aedd-38f4a9249518" type="radio">
+</input><label class="tabbed-label" for="905221bd-872c-4eeb-be99-b2fd3b71144d">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="19dea652-1739-4538-83ea-ebf76fa118b4" name="8b364c07-7e0d-4626-aedd-38f4a9249518" type="radio">
+</input><label class="tabbed-label" for="19dea652-1739-4538-83ea-ebf76fa118b4">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="7bbaeaf0-1926-47ad-b296-933c67d7de8b" name="8b364c07-7e0d-4626-aedd-38f4a9249518" type="radio">
+</input><label class="tabbed-label" for="7bbaeaf0-1926-47ad-b296-933c67d7de8b">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="3a76481d-75bf-4cdf-941c-4c41cc72a19f" name="8b364c07-7e0d-4626-aedd-38f4a9249518" type="radio">
+</input><label class="tabbed-label" for="3a76481d-75bf-4cdf-941c-4c41cc72a19f">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="6c073cf4-cbdc-4875-b657-679c17081943" name="8b364c07-7e0d-4626-aedd-38f4a9249518" type="radio">
+</input><label class="tabbed-label" for="6c073cf4-cbdc-4875-b657-679c17081943">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>vpeer</strong> = peer-&gt;v</p>
+</dd>
+<dd><p><strong>i</strong> = 0 (exposed as <strong>i</strong>)</p>
+</dd>
+</dl>
+</div>
+<input id="dfc1e822-af5a-4d25-8a84-1d7e7f9f8a9e" name="8b364c07-7e0d-4626-aedd-38f4a9249518" type="radio">
+</input><label class="tabbed-label" for="dfc1e822-af5a-4d25-8a84-1d7e7f9f8a9e">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=SilentSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">SilentSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">SilentSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="f47b2c25-f2db-484a-be24-a53e01715012" name="8b364c07-7e0d-4626-aedd-38f4a9249518" type="radio">
+</input><label class="tabbed-label" for="f47b2c25-f2db-484a-be24-a53e01715012">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;silentSynapse</span> <span class="na">id=</span><span class="s">&quot;silent1&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;silentSynapse</span> <span class="na">id=</span><span class="s">&quot;silent2&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;silentSynapse</span> <span class="na">id=</span><span class="s">&quot;silent1&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lineargradedsynapse">
+<span id="schema-lineargradedsynapse"></span><h2>linearGradedSynapse<a class="headerlink" href="#lineargradedsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basegradedsynapse"><span class="std std-ref">baseGradedSynapse</span></a></em></p>
+<p><i>Behaves just like a one way gap junction.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="f4614e1a-eee2-4ba2-9027-a66a5cb5f26f" name="6371e7ea-e337-4235-adba-71d0bdcd71f2" type="radio">
+</input><label class="tabbed-label" for="f4614e1a-eee2-4ba2-9027-a66a5cb5f26f">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>conductance</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="e1d24b97-7356-497a-9ed2-9f9e6ccdb5d3" name="6371e7ea-e337-4235-adba-71d0bdcd71f2" type="radio">
+</input><label class="tabbed-label" for="e1d24b97-7356-497a-9ed2-9f9e6ccdb5d3">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="f2493eba-0246-404d-8e15-75e38be3682b" name="6371e7ea-e337-4235-adba-71d0bdcd71f2" type="radio">
+</input><label class="tabbed-label" for="f2493eba-0246-404d-8e15-75e38be3682b">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="aa4b7a0b-dc29-4e36-b3fd-bbd97e730076" name="6371e7ea-e337-4235-adba-71d0bdcd71f2" type="radio">
+</input><label class="tabbed-label" for="aa4b7a0b-dc29-4e36-b3fd-bbd97e730076">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="7b9fda8b-0ce5-4191-b79f-5896b57652ff" name="6371e7ea-e337-4235-adba-71d0bdcd71f2" type="radio">
+</input><label class="tabbed-label" for="7b9fda8b-0ce5-4191-b79f-5896b57652ff">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="692ad542-6683-43d6-9f92-ca33abbd247f" name="6371e7ea-e337-4235-adba-71d0bdcd71f2" type="radio">
+</input><label class="tabbed-label" for="692ad542-6683-43d6-9f92-ca33abbd247f">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>vpeer</strong> = peer-&gt;v</p>
+</dd>
+<dd><p><strong>i</strong> = weight * conductance * (vpeer - v) (exposed as <strong>i</strong>)</p>
+</dd>
+</dl>
+</div>
+<input id="f7d6f044-7ad5-46b2-be0b-9af44ebe158a" name="6371e7ea-e337-4235-adba-71d0bdcd71f2" type="radio">
+</input><label class="tabbed-label" for="f7d6f044-7ad5-46b2-be0b-9af44ebe158a">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=LinearGradedSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">LinearGradedSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">LinearGradedSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">conductance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="6de635ce-972a-4fdd-82c4-bfb5268e6e2e" name="6371e7ea-e337-4235-adba-71d0bdcd71f2" type="radio">
+</input><label class="tabbed-label" for="6de635ce-972a-4fdd-82c4-bfb5268e6e2e">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;linearGradedSynapse</span> <span class="na">id=</span><span class="s">&quot;gs1&quot;</span> <span class="na">conductance=</span><span class="s">&quot;5pS&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gradedsynapse">
+<span id="schema-gradedsynapse"></span><h2>gradedSynapse<a class="headerlink" href="#gradedsynapse" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basegradedsynapse"><span class="std std-ref">baseGradedSynapse</span></a></em></p>
+<p><i>Graded/analog synapse. Based on synapse in Methods of <a class="reference external" href="http://www.nature.com/neuro/journal/v7/n12/abs/nn1352.html">http://www.nature.com/neuro/journal/v7/n12/abs/nn1352.html</a>.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="8d471ad8-aee1-4c77-8f03-bc1fe964b41a" name="b45a9c19-94b7-402e-89ce-03a771f6b3ce" type="radio">
+</input><label class="tabbed-label" for="8d471ad8-aee1-4c77-8f03-bc1fe964b41a">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Vth</strong></p></td>
+<td><p>The half-activation voltage of the synapse</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>conductance</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-conductance"><span class="std std-ref">conductance</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>delta</strong></p></td>
+<td><p>Slope of the activation curve</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>erev</strong></p></td>
+<td><p>The reversal potential of the synapse</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>k</strong></p></td>
+<td><p>Rate constant for transmitter-receptor dissociation rate</p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-per-time"><span class="std std-ref">per_time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="0ed43ff5-5d2e-40ca-ba30-4adea70c63c2" name="b45a9c19-94b7-402e-89ce-03a771f6b3ce" type="radio">
+</input><label class="tabbed-label" for="0ed43ff5-5d2e-40ca-ba30-4adea70c63c2">
+Properties</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong> (default: 1)</p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="a7e8a235-4aea-4bc5-8af6-aa421eda90af" name="b45a9c19-94b7-402e-89ce-03a771f6b3ce" type="radio">
+</input><label class="tabbed-label" for="a7e8a235-4aea-4bc5-8af6-aa421eda90af">
+Exposures</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>i</strong></p></td>
+<td><p>The total (usually time varying) current produced by this ComponentType <em>(from <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a>)</em></p></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-current"><span class="std std-ref">current</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>inf</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tau</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="5309c41c-cd0f-449a-b502-70615e8bc3c5" name="b45a9c19-94b7-402e-89ce-03a771f6b3ce" type="radio">
+</input><label class="tabbed-label" for="5309c41c-cd0f-449a-b502-70615e8bc3c5">
+Requirements</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>v</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-voltage"><span class="std std-ref">voltage</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="7de16cf5-2c2b-4550-a14b-a35edc76fedf" name="b45a9c19-94b7-402e-89ce-03a771f6b3ce" type="radio">
+</input><label class="tabbed-label" for="7de16cf5-2c2b-4550-a14b-a35edc76fedf">
+Event Ports</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>in</strong></p></td>
+<td><p><em>(from <a class="reference internal" href="#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a>)</em></p></td>
+<td><p>Direction: in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="a87b7521-ffe5-41f1-a74d-0e731395e71a" name="b45a9c19-94b7-402e-89ce-03a771f6b3ce" type="radio">
+</input><label class="tabbed-label" for="a87b7521-ffe5-41f1-a74d-0e731395e71a">
+Dynamics</label><div class="tabbed-content docutils">
+<dl class="simple myst">
+<dt><i><strong>State Variables</strong></i></dt><dd><p><strong>s</strong>: Dimensionless</p>
+</dd>
+<dt><i><strong>On Conditions</strong></i></dt><dd><p>IF (1-inf) &lt; 1e-4 THEN</p>
+</dd>
+<dd><p>   <strong>s</strong> = inf</p>
+</dd>
+<dt><i><strong>Derived Variables</strong></i></dt><dd><p><strong>vpeer</strong> = peer-&gt;v</p>
+</dd>
+<dd><p><strong>inf</strong> = 1/(1 + exp((Vth - vpeer)/delta)) (exposed as <strong>inf</strong>)</p>
+</dd>
+<dd><p><strong>tau</strong> = (1-inf)/k (exposed as <strong>tau</strong>)</p>
+</dd>
+<dd><p><strong>i</strong> = weight * conductance * s * (erev-v) (exposed as <strong>i</strong>)</p>
+</dd>
+<dt><i><strong>Conditional Derived Variables</strong></i></dt><dd><p>IF (1-inf) &gt; 1e-4 THEN</p>
+</dd>
+<dd><p>  <strong>s_rate</strong> = (inf - s)/tau</p>
+</dd>
+<dd><p>OTHERWISE</p>
+</dd>
+<dd><p>  <strong>s_rate</strong> = 0</p>
+</dd>
+<dt><i><strong>Time Derivatives</strong></i></dt><dd><p>d <strong>s</strong> /dt = s_rate</p>
+</dd>
+</dl>
+</div>
+<input id="276f5344-3651-4a04-a3c6-7902b972f535" name="b45a9c19-94b7-402e-89ce-03a771f6b3ce" type="radio">
+</input><label class="tabbed-label" for="276f5344-3651-4a04-a3c6-7902b972f535">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=GradedSynapse" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">GradedSynapse</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">GradedSynapse</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">conductance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Vth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">erev</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="fa5c764d-203d-4d03-8695-69466a2c3156" name="b45a9c19-94b7-402e-89ce-03a771f6b3ce" type="radio">
+</input><label class="tabbed-label" for="fa5c764d-203d-4d03-8695-69466a2c3156">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gradedSynapse</span> <span class="na">id=</span><span class="s">&quot;gs2&quot;</span> <span class="na">conductance=</span><span class="s">&quot;5pS&quot;</span> <span class="na">delta=</span><span class="s">&quot;5mV&quot;</span> <span class="na">Vth=</span><span class="s">&quot;-55mV&quot;</span> <span class="na">k=</span><span class="s">&quot;0.025per_ms&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gradedSynapse</span> <span class="na">id=</span><span class="s">&quot;gs1&quot;</span> <span class="na">conductance=</span><span class="s">&quot;0.1nS&quot;</span> <span class="na">delta=</span><span class="s">&quot;5mV&quot;</span> <span class="na">Vth=</span><span class="s">&quot;-35mV&quot;</span> <span class="na">k=</span><span class="s">&quot;0.025per_ms&quot;</span> <span class="na">erev=</span><span class="s">&quot;0mV&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "NeuroML/Documentation",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Userdocs/Schemas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Channels.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Channels</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Inputs.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Inputs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By NeuroML contributors<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

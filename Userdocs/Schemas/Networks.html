@@ -1,0 +1,2724 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Networks &#8212; NeuroML Documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/zcustom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PyNN" href="PyNN.html" />
+    <link rel="prev" title="Inputs" href="Inputs.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">NeuroML Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User documentation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MissionAndAims.html">
+   Mission and Aims
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Usage.html">
+   How to use this documentation
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../GettingStarted.html">
+   Getting started with NeuroML
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SingleNeuronExample.html">
+     Simulating a regular spiking Izhikevich neuron
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NML2_examples/SingleNeuron.html">
+     Interactive single Izhikevich neuron NeuroML example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../IzhikevichNetworkExample.html">
+     A two population network of regular spiking Izhikevich neurons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NML2_examples/IzhikevichNetwork.html">
+     Interactive two population network example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SingleCompartmentHHExample.html">
+     Simulating a single compartment Hodgkin-Huxley neuron
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NML2_examples/HH_single_compartment.html">
+     Interactive single compartment HH example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MultiCompartmentOLMexample.html">
+     Simulating a multi compartment OLM neuron
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NML2_examples/OLM.html">
+     Interactive multi-compartment OLM cell example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../FindingNeuroMLModels.html">
+   Finding and sharing NeuroML models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CreatingNeuroMLModels.html">
+   Creating NeuroML models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ValidatingNeuroMLModels.html">
+   Validating NeuroML Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../VisualisingNeuroMLModels.html">
+   Visualising NeuroML Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SimulatingNeuroMLModels.html">
+   Simulating NeuroML Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../OptimisingNeuroMLModels.html">
+   Optimising/fitting NeuroML Models
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Specification.html">
+   Schema/Specification
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../NeuroMLv2.html">
+     NeuroML v2
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="NeuroMLCoreDimensions.html">
+       NeuroMLCoreDimensions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="NeuroMLCoreCompTypes.html">
+       NeuroMLCoreCompTypes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Cells.html">
+       Cells
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Channels.html">
+       Channels
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Synapses.html">
+       Synapses
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Inputs.html">
+       Inputs
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Networks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="PyNN.html">
+       PyNN
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Simulation.html">
+       Simulation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../NeuroMLv1.html">
+     NeuroML v1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../UsingNeuroMLv2AndLEMS.html">
+   Using NeuroML 2 and LEMS
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Conventions.html">
+     Conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../UnitsAndDimensions.html">
+     Units and dimensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Paths.html">
+     Paths
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../QuantitiesAndRecording.html">
+     Quantities and recording
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../LEMSSimulation.html">
+     LEMS Simulation files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ExtendingNeuroMLv2WithLEMS.html">
+     Extending NeuroML with LEMS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Software/Software.html">
+   Software and Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/pyNeuroML.html">
+     pyNeuroML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/libNeuroML.html">
+     libNeuroML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/pyLEMS.html">
+     pyLEMS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/NeuroMLlite.html">
+     NeuroMLlite
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/jNeuroML.html">
+     jNeuroML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/jLEMS.html">
+     jLEMS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/NeuroML_API.html">
+     NeuroML C++ API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/MatLab.html">
+     MatLab NeuroML Toolbox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Software/SupportingTools.html">
+     Tools and resources with NeuroML support
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Publications.html">
+   Citing NeuroML and related publications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../FAQ.html">
+   Frequently asked questions (FAQ)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  NeuroML events
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/202109-COMBINE.html">
+   October 2021: NeuroML development workshop at COMBINE meeting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/202108-INCF-Training-Week.html">
+   August 2021: NeuroML tutorial at INCF Training Weeks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/202107-CNS2021.html">
+   July 2021: NeuroML tutorial at CNS*2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/202103-Harmony.html">
+   March 2021: NeuroML hackathon at HARMONY 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Events/PastEvents.html">
+   Past NeuroML Events
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The NeuroML Initiative
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/CommunicationChannels.html">
+   Getting in touch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/Standards.html">
+   Overview of standards in neuroscience
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/History.html">
+   A brief history of NeuroML
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../NeuroMLOrg/Board.html">
+   NeuroML Editorial Board
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../NeuroMLOrg/BoardHistory.html">
+     History of the NeuroML Editorial Board
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../NeuroMLOrg/BoardMeetingReports.html">
+     Workshop and Meeting reports
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/ScientificCommittee.html">
+   NeuroML Scientific Committee
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/Funding.html">
+   Funding and Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/Contributors.html">
+   NeuroML contributors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../NeuroMLOrg/CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Developer documentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../Devdocs/Devdocs.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Devdocs/DevSOP.html">
+     Contribution guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Devdocs/ReleaseProcess.html">
+     Release Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Devdocs/UpdatingStandard.html">
+     Making changes to the NeuroML standard
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Devdocs/InteractionOtherBits.html">
+   Interaction with other languages and standards
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Reference/Glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Reference/zBibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Userdocs/Schemas/Networks.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NeuroML/Documentation"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NeuroML/Documentation/issues/new?title=Issue%20on%20page%20%2FUserdocs/Schemas/Networks.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/NeuroML/Documentation/edit/master/source/Userdocs/Schemas/Networks.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network">
+   network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#networkwithtemperature">
+   networkWithTemperature
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basepopulation">
+   <em>
+    basePopulation
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#population">
+   population
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#populationlist">
+   populationList
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instance">
+   instance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#location">
+   location
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#region">
+   region
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rectangularextent">
+   rectangularExtent
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#projection">
+   projection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explicitconnection">
+   explicitConnection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connection">
+   connection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synapticconnection">
+   synapticConnection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synapticconnectionwd">
+   synapticConnectionWD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connectionwd">
+   connectionWD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electricalconnection">
+   electricalConnection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electricalconnectioninstance">
+   electricalConnectionInstance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electricalconnectioninstancew">
+   electricalConnectionInstanceW
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electricalprojection">
+   electricalProjection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuousconnection">
+   continuousConnection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuousconnectioninstance">
+   continuousConnectionInstance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuousconnectioninstancew">
+   continuousConnectionInstanceW
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuousprojection">
+   continuousProjection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explicitinput">
+   explicitInput
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inputlist">
+   inputList
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input">
+   input
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inputw">
+   inputW
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Networks</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network">
+   network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#networkwithtemperature">
+   networkWithTemperature
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basepopulation">
+   <em>
+    basePopulation
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#population">
+   population
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#populationlist">
+   populationList
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instance">
+   instance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#location">
+   location
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#region">
+   region
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rectangularextent">
+   rectangularExtent
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#projection">
+   projection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explicitconnection">
+   explicitConnection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connection">
+   connection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synapticconnection">
+   synapticConnection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synapticconnectionwd">
+   synapticConnectionWD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connectionwd">
+   connectionWD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electricalconnection">
+   electricalConnection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electricalconnectioninstance">
+   electricalConnectionInstance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electricalconnectioninstancew">
+   electricalConnectionInstanceW
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#electricalprojection">
+   electricalProjection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuousconnection">
+   continuousConnection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuousconnectioninstance">
+   continuousConnectionInstance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuousconnectioninstancew">
+   continuousConnectionInstanceW
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuousprojection">
+   continuousProjection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explicitinput">
+   explicitInput
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inputlist">
+   inputList
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input">
+   input
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inputw">
+   inputW
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="networks">
+<span id="schema-networks"></span><h1>Networks<a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h1>
+<p><strong>Network descriptions for NeuroML 2. Describes  <a class="reference internal" href="#schema-network"><span class="std std-ref">network</span></a> elements containing  <a class="reference internal" href="#schema-population"><span class="std std-ref">population</span></a>s ( potentially of type  <a class="reference internal" href="#schema-populationlist"><span class="std std-ref">populationList</span></a>, and so specifying a list of cell  <a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a>s ),  <a class="reference internal" href="#schema-projection"><span class="std std-ref">projection</span></a>s ( i.e. lists of  <a class="reference internal" href="#schema-connection"><span class="std std-ref">connection</span></a>s ) and  <a class="reference internal" href="#schema-input"><span class="std std-ref">input</span></a>s.</strong></p>
+<hr class="docutils" />
+<p>Original ComponentType definitions: <a class="reference external" href="https://github.com/NeuroML/NeuroML2/blob/documentation_update/NeuroML2CoreTypes//Networks.xml">Networks.xml</a>.
+Schema against which NeuroML based on these should be valid: <a class="reference external" href="https://github.com/NeuroML/NeuroML2/tree/documentation_update/Schemas/NeuroML2/NeuroML_v2.2.xsd">NeuroML_v2.2.xsd</a>.
+Generated on 17/11/21 from <a class="reference external" href="https://github.com/NeuroML/NeuroML2/commit/b3f361ad8a618c458f690c05091f62bae4763a72">this</a> commit.
+Please file any issues or questions at the <a class="reference external" href="https://github.com/NeuroML/NeuroML2/issues">issue tracker here</a>.</p>
+<hr class="docutils" />
+<div class="section" id="network">
+<span id="schema-network"></span><h2>network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="NeuroMLCoreCompTypes.html#schema-basestandalone"><span class="std std-ref">baseStandalone</span></a></em></p>
+<p><i>Network containing:  <a class="reference internal" href="#schema-population"><span class="std std-ref">population</span></a>s ( potentially of type  <a class="reference internal" href="#schema-populationlist"><span class="std std-ref">populationList</span></a>, and so specifying a list of cell  <a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a>s );  <a class="reference internal" href="#schema-projection"><span class="std std-ref">projection</span></a>s ( with lists of  <a class="reference internal" href="#schema-connection"><span class="std std-ref">connection</span></a>s ) and/or  <a class="reference internal" href="#schema-explicitconnection"><span class="std std-ref">explicitConnection</span></a>s; and  <a class="reference internal" href="#schema-inputlist"><span class="std std-ref">inputList</span></a>s ( with lists of  <a class="reference internal" href="#schema-input"><span class="std std-ref">input</span></a>s ) and/or  <a class="reference internal" href="#schema-explicitinput"><span class="std std-ref">explicitInput</span></a>s. Note: often in NeuroML this will be of type  <a class="reference internal" href="#schema-networkwithtemperature"><span class="std std-ref">networkWithTemperature</span></a> if there are temperature dependent elements ( e.g. ion channels ).</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="7c8ee3a1-2a07-471b-a53a-6661a8c2b894" name="c0a31ca3-8d4e-4d8d-8090-cd9585fa98ed" type="radio">
+</input><label class="tabbed-label" for="7c8ee3a1-2a07-471b-a53a-6661a8c2b894">
+Children list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>regions</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-region"><span class="std std-ref">region</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>populations</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-basepopulation"><span class="std std-ref">basePopulation</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>projections</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-projection"><span class="std std-ref">projection</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>synapticConnections</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-explicitconnection"><span class="std std-ref">explicitConnection</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>electricalProjection</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-electricalprojection"><span class="std std-ref">electricalProjection</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>continuousProjection</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-continuousprojection"><span class="std std-ref">continuousProjection</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>explicitInputs</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-explicitinput"><span class="std std-ref">explicitInput</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>inputs</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-inputlist"><span class="std std-ref">inputList</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="96406c89-b282-4f72-9ebc-8288419b6c72" name="c0a31ca3-8d4e-4d8d-8090-cd9585fa98ed" type="radio">
+</input><label class="tabbed-label" for="96406c89-b282-4f72-9ebc-8288419b6c72">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=Network" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">Network</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spaces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extracellular_properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">populations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cell_sets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">synaptic_connections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">projections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">electrical_projections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">continuous_projections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">explicit_inputs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">input_lists</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="4768fd56-e699-45bf-b5d7-6c8b20afe925" name="c0a31ca3-8d4e-4d8d-8090-cd9585fa98ed" type="radio">
+</input><label class="tabbed-label" for="4768fd56-e699-45bf-b5d7-6c8b20afe925">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;network</span> <span class="na">id=</span><span class="s">&quot;net1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;population</span> <span class="na">id=</span><span class="s">&quot;iafPop1&quot;</span> <span class="na">component=</span><span class="s">&quot;iaf&quot;</span> <span class="na">size=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;population</span> <span class="na">id=</span><span class="s">&quot;iafPop2&quot;</span> <span class="na">component=</span><span class="s">&quot;iaf&quot;</span> <span class="na">size=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;population</span> <span class="na">id=</span><span class="s">&quot;iafPop3&quot;</span> <span class="na">component=</span><span class="s">&quot;iaf&quot;</span> <span class="na">size=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;continuousProjection</span> <span class="na">id=</span><span class="s">&quot;testLinearGradedConn&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;iafPop1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;iafPop2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;continuousConnection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;0&quot;</span> <span class="na">postCell=</span><span class="s">&quot;0&quot;</span> <span class="na">preComponent=</span><span class="s">&quot;silent1&quot;</span> <span class="na">postComponent=</span><span class="s">&quot;gs1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/continuousProjection&gt;</span>
+        <span class="nt">&lt;continuousProjection</span> <span class="na">id=</span><span class="s">&quot;testGradedConn&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;iafPop1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;iafPop3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;continuousConnection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;0&quot;</span> <span class="na">postCell=</span><span class="s">&quot;0&quot;</span> <span class="na">preComponent=</span><span class="s">&quot;silent2&quot;</span> <span class="na">postComponent=</span><span class="s">&quot;gs2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/continuousProjection&gt;</span>
+        <span class="nt">&lt;explicitInput</span> <span class="na">target=</span><span class="s">&quot;iafPop1[0]&quot;</span> <span class="na">input=</span><span class="s">&quot;pulseGen1&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;explicitInput</span> <span class="na">target=</span><span class="s">&quot;iafPop1[0]&quot;</span> <span class="na">input=</span><span class="s">&quot;pulseGen2&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;explicitInput</span> <span class="na">target=</span><span class="s">&quot;iafPop1[0]&quot;</span> <span class="na">input=</span><span class="s">&quot;pulseGen3&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/network&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;network</span> <span class="na">id=</span><span class="s">&quot;net2&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;population</span> <span class="na">id=</span><span class="s">&quot;hhPop1&quot;</span> <span class="na">component=</span><span class="s">&quot;hhcell&quot;</span> <span class="na">size=</span><span class="s">&quot;1&quot;</span> <span class="na">type=</span><span class="s">&quot;populationList&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;instance</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;location</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/instance&gt;</span>
+        <span class="nt">&lt;/population&gt;</span>
+        <span class="nt">&lt;population</span> <span class="na">id=</span><span class="s">&quot;hhPop2&quot;</span> <span class="na">component=</span><span class="s">&quot;hhcell&quot;</span> <span class="na">size=</span><span class="s">&quot;1&quot;</span> <span class="na">type=</span><span class="s">&quot;populationList&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;instance</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;location</span> <span class="na">x=</span><span class="s">&quot;100&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/instance&gt;</span>
+        <span class="nt">&lt;/population&gt;</span>
+        <span class="nt">&lt;continuousProjection</span> <span class="na">id=</span><span class="s">&quot;testGradedConn&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;hhPop1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;hhPop2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;continuousConnectionInstanceW</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;../hhPop1/0/hhcell&quot;</span> <span class="na">postCell=</span><span class="s">&quot;../hhPop2/0/hhcell&quot;</span> <span class="na">preComponent=</span><span class="s">&quot;silent1&quot;</span> <span class="na">postComponent=</span><span class="s">&quot;gs1&quot;</span> <span class="na">weight=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/continuousProjection&gt;</span>
+        <span class="nt">&lt;inputList</span> <span class="na">id=</span><span class="s">&quot;i1&quot;</span> <span class="na">component=</span><span class="s">&quot;pulseGen1&quot;</span> <span class="na">population=</span><span class="s">&quot;hhPop1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">target=</span><span class="s">&quot;../hhPop1/0/hhcell&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/inputList&gt;</span>
+    <span class="nt">&lt;/network&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;network</span> <span class="na">id=</span><span class="s">&quot;PyrCellNet&quot;</span><span class="nt">&gt;</span>   
+    
+        
+        <span class="nt">&lt;population</span> <span class="na">id=</span><span class="s">&quot;Population1&quot;</span> <span class="na">component=</span><span class="s">&quot;PyrCell&quot;</span> <span class="na">extracellularProperties=</span><span class="s">&quot;extracellular&quot;</span> <span class="na">size=</span><span class="s">&quot;9&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;/population&gt;</span>
+        <span class="nt">&lt;projection</span> <span class="na">id=</span><span class="s">&quot;Proj1&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;Population1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;Population1&quot;</span> <span class="na">synapse=</span><span class="s">&quot;AMPA&quot;</span><span class="nt">&gt;</span>
+           
+        <span class="nt">&lt;/projection&gt;</span>
+    <span class="nt">&lt;/network&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="networkwithtemperature">
+<span id="schema-networkwithtemperature"></span><h2>networkWithTemperature<a class="headerlink" href="#networkwithtemperature" title="Permalink to this headline">¶</a></h2>
+<p>extends <a class="reference internal" href="#schema-network"><span class="std std-ref">network</span></a></p>
+<p><i>Same as  <a class="reference internal" href="#schema-network"><span class="std std-ref">network</span></a>, but with an explicit <strong>temperature</strong> for temperature dependent elements ( e.g. ion channels ).</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="bdb068da-c5a6-4ab9-861c-19a22673ff2c" name="8cf81d19-48e1-48bb-9e51-0414f40a08e3" type="radio">
+</input><label class="tabbed-label" for="bdb068da-c5a6-4ab9-861c-19a22673ff2c">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>temperature</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-temperature"><span class="std std-ref">temperature</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="basepopulation">
+<span id="schema-basepopulation"></span><h2><em>basePopulation</em><a class="headerlink" href="#basepopulation" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="NeuroMLCoreCompTypes.html#schema-basestandalone"><span class="std std-ref">baseStandalone</span></a></em></p>
+<p><i>A population of multiple instances of a specific <strong>component,</strong> which anything which extends  <a class="reference internal" href="Cells.html#schema-basecell"><span class="std std-ref">baseCell</span></a>.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="35523ba6-b791-469c-b7c2-8d8a68e8bb87" name="246bd84b-b8c5-49da-8644-17f0c2a6756d" type="radio">
+</input><label class="tabbed-label" for="35523ba6-b791-469c-b7c2-8d8a68e8bb87">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>component</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Cells.html#schema-basecell"><span class="std std-ref">baseCell</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="36edba23-23fa-460b-bd50-f997357e967f" name="246bd84b-b8c5-49da-8644-17f0c2a6756d" type="radio">
+</input><label class="tabbed-label" for="36edba23-23fa-460b-bd50-f997357e967f">
+Child list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>notes</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreCompTypes.html#schema-notes"><span class="std std-ref">notes</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>annotation</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreCompTypes.html#schema-annotation"><span class="std std-ref">annotation</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="4b4b0c8e-4105-4a53-ac54-85eaad0325d2" name="246bd84b-b8c5-49da-8644-17f0c2a6756d" type="radio">
+</input><label class="tabbed-label" for="4b4b0c8e-4105-4a53-ac54-85eaad0325d2">
+Children list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>property</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreCompTypes.html#schema-property"><span class="std std-ref">property</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="population">
+<span id="schema-population"></span><h2>population<a class="headerlink" href="#population" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basepopulation"><span class="std std-ref">basePopulation</span></a></em></p>
+<p><i>A population of components, with just one parameter for the <strong>size,</strong> i.e. number of components to create. Note: quite often this is used with type= <a class="reference internal" href="#schema-populationlist"><span class="std std-ref">populationList</span></a> which means the size is determined by the number of  <a class="reference internal" href="#schema-instance"><span class="std std-ref">instance</span></a>s ( with  <a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a>s ) in the list. The <strong>size</strong> attribute is still set, and there will be a validation error if this does not match the number in the list.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="4ae66edb-b12c-4b2f-b78c-7c9dc1ea50d8" name="522c041c-994b-41ec-af10-f65fb4432102" type="radio">
+</input><label class="tabbed-label" for="4ae66edb-b12c-4b2f-b78c-7c9dc1ea50d8">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>size</strong></p></td>
+<td><p>Number of instances of this Component to create when the population is instantiated</p></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="6fff9cdc-932f-49d2-8f6e-e6184da9e3c8" name="522c041c-994b-41ec-af10-f65fb4432102" type="radio">
+</input><label class="tabbed-label" for="6fff9cdc-932f-49d2-8f6e-e6184da9e3c8">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=Population" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">Population</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">Population</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metaid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extracellular_properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="6807591e-b28b-42f1-aa17-06609a7ee17b" name="522c041c-994b-41ec-af10-f65fb4432102" type="radio">
+</input><label class="tabbed-label" for="6807591e-b28b-42f1-aa17-06609a7ee17b">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;population</span> <span class="na">id=</span><span class="s">&quot;iafPop1&quot;</span> <span class="na">component=</span><span class="s">&quot;iaf&quot;</span> <span class="na">size=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;population</span> <span class="na">id=</span><span class="s">&quot;iafPop2&quot;</span> <span class="na">component=</span><span class="s">&quot;iaf&quot;</span> <span class="na">size=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;population</span> <span class="na">id=</span><span class="s">&quot;iafPop3&quot;</span> <span class="na">component=</span><span class="s">&quot;iaf&quot;</span> <span class="na">size=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="populationlist">
+<span id="schema-populationlist"></span><h2>populationList<a class="headerlink" href="#populationlist" title="Permalink to this headline">¶</a></h2>
+<p>extends <em><a class="reference internal" href="#schema-basepopulation"><span class="std std-ref">basePopulation</span></a></em></p>
+<p><i>An explicit list of  <a class="reference internal" href="#schema-instance"><span class="std std-ref">instance</span></a>s ( with  <a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a>s ) of components in the population.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="761e630a-25af-4388-aea7-182897db2b1c" name="33e90b57-c81c-461f-b30c-b4a653a1f963" type="radio">
+</input><label class="tabbed-label" for="761e630a-25af-4388-aea7-182897db2b1c">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>size</strong></p></td>
+<td><p>Note: the size of the populationList to create is set by the number of explicitly defined instances. The size attribute is still set, and there will be a validation error if this does not match the number in the list.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="9ee17222-f9e7-4d2a-bc56-9a5f1f09a2c2" name="33e90b57-c81c-461f-b30c-b4a653a1f963" type="radio">
+</input><label class="tabbed-label" for="9ee17222-f9e7-4d2a-bc56-9a5f1f09a2c2">
+Children list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>instances</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-instance"><span class="std std-ref">instance</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="instance">
+<span id="schema-instance"></span><h2>instance<a class="headerlink" href="#instance" title="Permalink to this headline">¶</a></h2>
+<p><i>Specifies a single instance of a component in a  <a class="reference internal" href="#schema-population"><span class="std std-ref">population</span></a> ( placed at  <a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a> ).</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="2db80d9b-5345-4889-b999-7d35e90400db" name="95669728-5305-4bba-a11e-7ce049cb2707" type="radio">
+</input><label class="tabbed-label" for="2db80d9b-5345-4889-b999-7d35e90400db">
+Child list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>location</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="f27a7d87-8a2b-40ab-b762-33c78cac42ca" name="95669728-5305-4bba-a11e-7ce049cb2707" type="radio">
+</input><label class="tabbed-label" for="f27a7d87-8a2b-40ab-b762-33c78cac42ca">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=Instance" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">Instance</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="c2d2d873-9d06-4c53-b066-2fd07dd02596" name="95669728-5305-4bba-a11e-7ce049cb2707" type="radio">
+</input><label class="tabbed-label" for="c2d2d873-9d06-4c53-b066-2fd07dd02596">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;instance</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;location</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/instance&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;instance</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;location</span> <span class="na">x=</span><span class="s">&quot;100&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/instance&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;instance</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;location</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/instance&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="location">
+<span id="schema-location"></span><h2>location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
+<p><i>Specifies the ( x, y, z ) location of a single  <a class="reference internal" href="#schema-instance"><span class="std std-ref">instance</span></a> of a component in a  <a class="reference internal" href="#schema-population"><span class="std std-ref">population</span></a>.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="beb3b34c-12bf-4124-9dbd-808f10c44eb9" name="9e33fbf9-45b0-4d28-96b1-eccb631a13fd" type="radio">
+</input><label class="tabbed-label" for="beb3b34c-12bf-4124-9dbd-808f10c44eb9">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>x</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>y</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>z</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="d46eaaa6-2c14-4756-9609-83f9ae3c7041" name="9e33fbf9-45b0-4d28-96b1-eccb631a13fd" type="radio">
+</input><label class="tabbed-label" for="d46eaaa6-2c14-4756-9609-83f9ae3c7041">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=Location" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">Location</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">Location</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="24903d67-7ee0-4fc7-957b-2cd6867d6e95" name="9e33fbf9-45b0-4d28-96b1-eccb631a13fd" type="radio">
+</input><label class="tabbed-label" for="24903d67-7ee0-4fc7-957b-2cd6867d6e95">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;location</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;location</span> <span class="na">x=</span><span class="s">&quot;100&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;location</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">z=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="region">
+<span id="schema-region"></span><h2>region<a class="headerlink" href="#region" title="Permalink to this headline">¶</a></h2>
+<p><i>Initial attempt to specify 3D region for placing cells. Work in progress…</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="c39dd7ac-79ab-4b44-ad0e-f76621fac64d" name="c9d10409-f148-4984-9d9c-99f6c796a40f" type="radio">
+</input><label class="tabbed-label" for="c39dd7ac-79ab-4b44-ad0e-f76621fac64d">
+Child list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>rectangularExtent</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-rectangularextent"><span class="std std-ref">rectangularExtent</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="4c9bca72-32cc-41db-97e0-c074d409bd57" name="c9d10409-f148-4984-9d9c-99f6c796a40f" type="radio">
+</input><label class="tabbed-label" for="4c9bca72-32cc-41db-97e0-c074d409bd57">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=Region" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">Region</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">Region</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spaces</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">anytypeobjs_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="rectangularextent">
+<span id="schema-rectangularextent"></span><h2>rectangularExtent<a class="headerlink" href="#rectangularextent" title="Permalink to this headline">¶</a></h2>
+<p><i>For defining a 3D rectangular box.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="2c0e0a4a-fa05-42c6-b6b4-04290c3fb592" name="873ed7ca-05b5-4b5d-abc3-98faae894135" type="radio">
+</input><label class="tabbed-label" for="2c0e0a4a-fa05-42c6-b6b4-04290c3fb592">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>xLength</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>xStart</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>yLength</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>yStart</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>zLength</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>zStart</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="projection">
+<span id="schema-projection"></span><h2>projection<a class="headerlink" href="#projection" title="Permalink to this headline">¶</a></h2>
+<p><i>Projection from one population, <strong>presynapticPopulation</strong> to another, <strong>postsynapticPopulation,</strong> through <strong>synapse.</strong> Contains lists of  <a class="reference internal" href="#schema-connection"><span class="std std-ref">connection</span></a> or  <a class="reference internal" href="#schema-connectionwd"><span class="std std-ref">connectionWD</span></a> elements.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="ae2f1b1e-2dbd-4d0c-8807-8039fce89b11" name="ae0ae7ec-0fc9-4bf0-a501-b440eacca2b6" type="radio">
+</input><label class="tabbed-label" for="ae2f1b1e-2dbd-4d0c-8807-8039fce89b11">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>presynapticPopulation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postsynapticPopulation</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="748e0bad-5c5e-4eee-9d3c-75757c229984" name="ae0ae7ec-0fc9-4bf0-a501-b440eacca2b6" type="radio">
+</input><label class="tabbed-label" for="748e0bad-5c5e-4eee-9d3c-75757c229984">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>synapse</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Synapses.html#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="45dffb27-4054-49ad-83af-9249b5f88d85" name="ae0ae7ec-0fc9-4bf0-a501-b440eacca2b6" type="radio">
+</input><label class="tabbed-label" for="45dffb27-4054-49ad-83af-9249b5f88d85">
+Children list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>connections</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-connection"><span class="std std-ref">connection</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>connectionsWD</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-connectionwd"><span class="std std-ref">connectionWD</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="630fb4f9-4d08-472a-bb97-bd83d5d00224" name="ae0ae7ec-0fc9-4bf0-a501-b440eacca2b6" type="radio">
+</input><label class="tabbed-label" for="630fb4f9-4d08-472a-bb97-bd83d5d00224">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=Projection" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">Projection</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">Projection</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">presynaptic_population</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">postsynaptic_population</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">synapse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">connections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">connection_wds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="8b61b6b2-60ce-46d9-a605-c8d400fe849d" name="ae0ae7ec-0fc9-4bf0-a501-b440eacca2b6" type="radio">
+</input><label class="tabbed-label" for="8b61b6b2-60ce-46d9-a605-c8d400fe849d">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;projection</span> <span class="na">id=</span><span class="s">&quot;Proj1&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;Population1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;Population1&quot;</span> <span class="na">synapse=</span><span class="s">&quot;AMPA&quot;</span><span class="nt">&gt;</span>
+           
+        <span class="nt">&lt;/projection&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;projection</span> <span class="na">id=</span><span class="s">&quot;internal1&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;iafCells&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;iafCells&quot;</span> <span class="na">synapse=</span><span class="s">&quot;syn1&quot;</span><span class="nt">&gt;</span>
+            <span class="cm">&lt;!--TODO: Fix! want to define synapse in here, so that multiple synapses per connection can be defined</span>
+<span class="cm">            &lt;synapseComponent component=&quot;syn1&quot;/&gt;--&gt;</span>
+            
+            <span class="nt">&lt;connection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCellId=</span><span class="s">&quot;../iafCells/0/iaf&quot;</span> <span class="na">postCellId=</span><span class="s">&quot;../iafCells/1/iaf&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/projection&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;projection</span> <span class="na">id=</span><span class="s">&quot;internal2&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;iafCells&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;iafCells&quot;</span> <span class="na">synapse=</span><span class="s">&quot;syn2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;connection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCellId=</span><span class="s">&quot;../iafCells/0/iaf&quot;</span> <span class="na">postCellId=</span><span class="s">&quot;../iafCells/2/iaf&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/projection&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="explicitconnection">
+<span id="schema-explicitconnection"></span><h2>explicitConnection<a class="headerlink" href="#explicitconnection" title="Permalink to this headline">¶</a></h2>
+<p><i>Explicit event connection between components.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="30482136-e0f4-48c7-b78d-526cc408bb14" name="5fb25bf1-8d6d-4eb9-bee5-08eca70bc6b0" type="radio">
+</input><label class="tabbed-label" for="30482136-e0f4-48c7-b78d-526cc408bb14">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>targetPort</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="668b7321-3e21-428d-aaf5-36494b0fc8e9" name="5fb25bf1-8d6d-4eb9-bee5-08eca70bc6b0" type="radio">
+</input><label class="tabbed-label" for="668b7321-3e21-428d-aaf5-36494b0fc8e9">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>from</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="connection">
+<span id="schema-connection"></span><h2>connection<a class="headerlink" href="#connection" title="Permalink to this headline">¶</a></h2>
+<p><i>Event connection directly between named components, which gets processed via a new instance of a <strong>synapse</strong> component which is created on the target component. Normally contained inside a  <a class="reference internal" href="#schema-projection"><span class="std std-ref">projection</span></a> element.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="5cfde0d7-ee44-464b-8e9a-86bbe74e9f6e" name="665e2c0e-0401-426b-a12f-222c176d4257" type="radio">
+</input><label class="tabbed-label" for="5cfde0d7-ee44-464b-8e9a-86bbe74e9f6e">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>destination</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>preFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>postFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>preSegmentId</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>postSegmentId</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="c1ebb1ab-942f-4a26-a727-595b4e4c5d11" name="665e2c0e-0401-426b-a12f-222c176d4257" type="radio">
+</input><label class="tabbed-label" for="c1ebb1ab-942f-4a26-a727-595b4e4c5d11">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preCellId</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postCellId</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="aebb1bc3-6087-4f91-841e-840919c3d757" name="665e2c0e-0401-426b-a12f-222c176d4257" type="radio">
+</input><label class="tabbed-label" for="aebb1bc3-6087-4f91-841e-840919c3d757">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=Connection" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">Connection</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">Connection</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_cell_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_segment_id</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">pre_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">post_cell_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_segment_id</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">post_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="623e0333-1bc0-4914-9368-d82dea258d8b" name="665e2c0e-0401-426b-a12f-222c176d4257" type="radio">
+</input><label class="tabbed-label" for="623e0333-1bc0-4914-9368-d82dea258d8b">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;connection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCellId=</span><span class="s">&quot;../iafCells/0/iaf&quot;</span> <span class="na">postCellId=</span><span class="s">&quot;../iafCells/1/iaf&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;connection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCellId=</span><span class="s">&quot;../iafCells/0/iaf&quot;</span> <span class="na">postCellId=</span><span class="s">&quot;../iafCells/2/iaf&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;connection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCellId=</span><span class="s">&quot;../pop0/0/MultiCompCell&quot;</span> <span class="na">postCellId=</span><span class="s">&quot;../pop0/1/MultiCompCell&quot;</span> <span class="na">preSegmentId=</span><span class="s">&quot;0&quot;</span> <span class="na">preFractionAlong=</span><span class="s">&quot;0.5&quot;</span> <span class="na">postSegmentId=</span><span class="s">&quot;0&quot;</span> <span class="na">postFractionAlong=</span><span class="s">&quot;0.5&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="synapticconnection">
+<span id="schema-synapticconnection"></span><h2>synapticConnection<a class="headerlink" href="#synapticconnection" title="Permalink to this headline">¶</a></h2>
+<p>extends <a class="reference internal" href="#schema-explicitconnection"><span class="std std-ref">explicitConnection</span></a></p>
+<p><i>Explicit event connection between named components, which gets processed via a new instance of a <strong>synapse</strong> component which is created on the target component.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="111d3fb9-7a9a-4f03-aa77-dd681ad89aa4" name="90af2305-8100-4aa6-9ba0-6753ee6eb72b" type="radio">
+</input><label class="tabbed-label" for="111d3fb9-7a9a-4f03-aa77-dd681ad89aa4">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>destination</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="2c2f8d74-4814-4c2a-8be4-7f2e69aba578" name="90af2305-8100-4aa6-9ba0-6753ee6eb72b" type="radio">
+</input><label class="tabbed-label" for="2c2f8d74-4814-4c2a-8be4-7f2e69aba578">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>from</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="5e64d788-fc38-4444-9727-b4ef1bce26bb" name="90af2305-8100-4aa6-9ba0-6753ee6eb72b" type="radio">
+</input><label class="tabbed-label" for="5e64d788-fc38-4444-9727-b4ef1bce26bb">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>synapse</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Synapses.html#schema-basesynapse"><span class="std std-ref">baseSynapse</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="df7b6aa2-8acc-4a28-a626-e7e0a79a1092" name="90af2305-8100-4aa6-9ba0-6753ee6eb72b" type="radio">
+</input><label class="tabbed-label" for="df7b6aa2-8acc-4a28-a626-e7e0a79a1092">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=SynapticConnection" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">SynapticConnection</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">SynapticConnection</span><span class="p">(</span><span class="n">from_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">synapse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="synapticconnectionwd">
+<span id="schema-synapticconnectionwd"></span><h2>synapticConnectionWD<a class="headerlink" href="#synapticconnectionwd" title="Permalink to this headline">¶</a></h2>
+<p>extends <a class="reference internal" href="#schema-synapticconnection"><span class="std std-ref">synapticConnection</span></a></p>
+<p><i>Explicit event connection between named components, which gets processed via a new instance of a <strong>synapse</strong> component which is created on the target component, includes setting of <strong>weight</strong> and <strong>delay</strong> for the synaptic connection.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="815584ab-2cf5-4715-98dc-8da70b28e1e4" name="fb8f5e2c-a6a6-4842-98db-a0c94bdb8f57" type="radio">
+</input><label class="tabbed-label" for="815584ab-2cf5-4715-98dc-8da70b28e1e4">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>delay</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>weight</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="3e55b645-d65d-4214-966f-ef5033ed3dca" name="fb8f5e2c-a6a6-4842-98db-a0c94bdb8f57" type="radio">
+</input><label class="tabbed-label" for="3e55b645-d65d-4214-966f-ef5033ed3dca">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>from</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="connectionwd">
+<span id="schema-connectionwd"></span><h2>connectionWD<a class="headerlink" href="#connectionwd" title="Permalink to this headline">¶</a></h2>
+<p>extends <a class="reference internal" href="#schema-connection"><span class="std std-ref">connection</span></a></p>
+<p><i>Event connection between named components, which gets processed via a new instance of a synapse component which is created on the target component, includes setting of <strong>weight</strong> and <strong>delay</strong> for the synaptic connection.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="d5d21892-f60c-492e-87c0-3d6704b6e45f" name="bf9778e2-4950-4e87-b401-c80c4a755a8b" type="radio">
+</input><label class="tabbed-label" for="d5d21892-f60c-492e-87c0-3d6704b6e45f">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>delay</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="NeuroMLCoreDimensions.html#schema-dimensions-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>weight</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="01e7219e-7178-4beb-ab31-398fd7c5481f" name="bf9778e2-4950-4e87-b401-c80c4a755a8b" type="radio">
+</input><label class="tabbed-label" for="01e7219e-7178-4beb-ab31-398fd7c5481f">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>destination</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>preFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>postFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>preSegmentId</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>postSegmentId</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="2347081c-314c-4681-9436-71fad383b06e" name="bf9778e2-4950-4e87-b401-c80c4a755a8b" type="radio">
+</input><label class="tabbed-label" for="2347081c-314c-4681-9436-71fad383b06e">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preCellId</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postCellId</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="a20b892d-e927-4b96-9077-0344a3a736c2" name="bf9778e2-4950-4e87-b401-c80c4a755a8b" type="radio">
+</input><label class="tabbed-label" for="a20b892d-e927-4b96-9077-0344a3a736c2">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ConnectionWD" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ConnectionWD</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ConnectionWD</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_cell_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_segment_id</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">pre_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">post_cell_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_segment_id</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">post_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="9c131289-657b-44c7-aecc-fa47f4955409" name="bf9778e2-4950-4e87-b401-c80c4a755a8b" type="radio">
+</input><label class="tabbed-label" for="9c131289-657b-44c7-aecc-fa47f4955409">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;connectionWD</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCellId=</span><span class="s">&quot;../pop_EIF_cond_exp_isfa_ista[0]&quot;</span> <span class="na">postCellId=</span><span class="s">&quot;../pop_target[0]&quot;</span> <span class="na">weight=</span><span class="s">&quot;0.01&quot;</span> <span class="na">delay=</span><span class="s">&quot;10ms&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;connectionWD</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCellId=</span><span class="s">&quot;../pop_EIF_cond_alpha_isfa_ista[0]&quot;</span> <span class="na">postCellId=</span><span class="s">&quot;../pop_target[1]&quot;</span> <span class="na">weight=</span><span class="s">&quot;0.005&quot;</span> <span class="na">delay=</span><span class="s">&quot;20ms&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;connectionWD</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCellId=</span><span class="s">&quot;../pop_IF_curr_alpha[0]&quot;</span> <span class="na">postCellId=</span><span class="s">&quot;../pop_target[2]&quot;</span> <span class="na">weight=</span><span class="s">&quot;1&quot;</span> <span class="na">delay=</span><span class="s">&quot;30ms&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="electricalconnection">
+<span id="schema-electricalconnection"></span><h2>electricalConnection<a class="headerlink" href="#electricalconnection" title="Permalink to this headline">¶</a></h2>
+<p><i>To enable connections between populations through gap junctions.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="a5575b9a-ea71-4cdd-a582-a037d7c44ad0" name="640a0633-7dd0-4b54-9679-9f4ab912df04" type="radio">
+</input><label class="tabbed-label" for="a5575b9a-ea71-4cdd-a582-a037d7c44ad0">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>synapse</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Synapses.html#schema-gapjunction"><span class="std std-ref">gapJunction</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="6a228ddd-1bd1-4520-aaff-1402b547fa45" name="640a0633-7dd0-4b54-9679-9f4ab912df04" type="radio">
+</input><label class="tabbed-label" for="6a228ddd-1bd1-4520-aaff-1402b547fa45">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ElectricalConnection" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ElectricalConnection</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ElectricalConnection</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">pre_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">post_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">post_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">synapse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="b2cfda64-5e8f-4efc-bf29-3953da5d7d51" name="640a0633-7dd0-4b54-9679-9f4ab912df04" type="radio">
+</input><label class="tabbed-label" for="b2cfda64-5e8f-4efc-bf29-3953da5d7d51">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;electricalConnection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;0&quot;</span> <span class="na">postCell=</span><span class="s">&quot;0&quot;</span> <span class="na">synapse=</span><span class="s">&quot;gj1&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="electricalconnectioninstance">
+<span id="schema-electricalconnectioninstance"></span><h2>electricalConnectionInstance<a class="headerlink" href="#electricalconnectioninstance" title="Permalink to this headline">¶</a></h2>
+<p><i>To enable connections between populations through gap junctions. Populations need to be of type  <a class="reference internal" href="#schema-populationlist"><span class="std std-ref">populationList</span></a> and contain  <a class="reference internal" href="#schema-instance"><span class="std std-ref">instance</span></a> and  <a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a> elements.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="fdfa6de6-b15d-495d-a6eb-af4a5c6ed5b5" name="c22973d5-abac-4883-96bd-a3e1dfb4f2b1" type="radio">
+</input><label class="tabbed-label" for="fdfa6de6-b15d-495d-a6eb-af4a5c6ed5b5">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>preSegment</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postSegment</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="4ce8abab-e8dc-43c4-818b-b49c3f823f9b" name="c22973d5-abac-4883-96bd-a3e1dfb4f2b1" type="radio">
+</input><label class="tabbed-label" for="4ce8abab-e8dc-43c4-818b-b49c3f823f9b">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preCell</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postCell</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="f59b1f2e-4b6c-452b-8b97-4997fb80550d" name="c22973d5-abac-4883-96bd-a3e1dfb4f2b1" type="radio">
+</input><label class="tabbed-label" for="f59b1f2e-4b6c-452b-8b97-4997fb80550d">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>synapse</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Synapses.html#schema-gapjunction"><span class="std std-ref">gapJunction</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="18085ee5-70a3-4acd-b84c-19c4522b32bd" name="c22973d5-abac-4883-96bd-a3e1dfb4f2b1" type="radio">
+</input><label class="tabbed-label" for="18085ee5-70a3-4acd-b84c-19c4522b32bd">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ElectricalConnectionInstance" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ElectricalConnectionInstance</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ElectricalConnectionInstance</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">pre_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">post_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">post_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">synapse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="37c47fa8-7c22-4690-b35b-07a745e41827" name="c22973d5-abac-4883-96bd-a3e1dfb4f2b1" type="radio">
+</input><label class="tabbed-label" for="37c47fa8-7c22-4690-b35b-07a745e41827">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;electricalConnectionInstance</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;../iafPop1/0/iaf&quot;</span> <span class="na">postCell=</span><span class="s">&quot;../iafPop2/0/iaf&quot;</span> <span class="na">preSegment=</span><span class="s">&quot;0&quot;</span> <span class="na">preFractionAlong=</span><span class="s">&quot;0.5&quot;</span> <span class="na">postSegment=</span><span class="s">&quot;0&quot;</span> <span class="na">postFractionAlong=</span><span class="s">&quot;0.5&quot;</span> <span class="na">synapse=</span><span class="s">&quot;gj1&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="electricalconnectioninstancew">
+<span id="schema-electricalconnectioninstancew"></span><h2>electricalConnectionInstanceW<a class="headerlink" href="#electricalconnectioninstancew" title="Permalink to this headline">¶</a></h2>
+<p>extends <a class="reference internal" href="#schema-electricalconnectioninstance"><span class="std std-ref">electricalConnectionInstance</span></a></p>
+<p><i>To enable connections between populations through gap junctions. Populations need to be of type  <a class="reference internal" href="#schema-populationlist"><span class="std std-ref">populationList</span></a> and contain  <a class="reference internal" href="#schema-instance"><span class="std std-ref">instance</span></a> and  <a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a> elements. Includes setting of <strong>weight</strong> for the connection.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="0b182821-774c-41c2-946a-c3c8d0fdaa3a" name="bba4bcb0-76b7-41ef-be7f-0109fbfb6180" type="radio">
+</input><label class="tabbed-label" for="0b182821-774c-41c2-946a-c3c8d0fdaa3a">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="13bdabbb-1496-4ad6-a64e-fcaa04017970" name="bba4bcb0-76b7-41ef-be7f-0109fbfb6180" type="radio">
+</input><label class="tabbed-label" for="13bdabbb-1496-4ad6-a64e-fcaa04017970">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>preSegment</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postSegment</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="aedb67a5-beac-4214-a644-c592a737f470" name="bba4bcb0-76b7-41ef-be7f-0109fbfb6180" type="radio">
+</input><label class="tabbed-label" for="aedb67a5-beac-4214-a644-c592a737f470">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preCell</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postCell</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="bbae9d0e-8c50-46ba-a4f5-999adebd6dc1" name="bba4bcb0-76b7-41ef-be7f-0109fbfb6180" type="radio">
+</input><label class="tabbed-label" for="bbae9d0e-8c50-46ba-a4f5-999adebd6dc1">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ElectricalConnectionInstanceW" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ElectricalConnectionInstanceW</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ElectricalConnectionInstanceW</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">pre_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">post_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">post_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">synapse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="electricalprojection">
+<span id="schema-electricalprojection"></span><h2>electricalProjection<a class="headerlink" href="#electricalprojection" title="Permalink to this headline">¶</a></h2>
+<p><i>A projection between <strong>presynapticPopulation</strong> to another <strong>postsynapticPopulation</strong> through gap junctions.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="c06a7a73-f28f-49fd-95ca-b1444a5b7ef7" name="7472e2d7-3160-4238-9d4e-989d8d2c5b0c" type="radio">
+</input><label class="tabbed-label" for="c06a7a73-f28f-49fd-95ca-b1444a5b7ef7">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>presynapticPopulation</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-population"><span class="std std-ref">population</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>postsynapticPopulation</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-population"><span class="std std-ref">population</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="810a6927-8d29-407e-9439-827ae3522062" name="7472e2d7-3160-4238-9d4e-989d8d2c5b0c" type="radio">
+</input><label class="tabbed-label" for="810a6927-8d29-407e-9439-827ae3522062">
+Children list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>connections</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-electricalconnection"><span class="std std-ref">electricalConnection</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>connectionInstances</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-electricalconnectioninstance"><span class="std std-ref">electricalConnectionInstance</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="9211cdab-d0fd-46c7-867f-1e0044c5ff9d" name="7472e2d7-3160-4238-9d4e-989d8d2c5b0c" type="radio">
+</input><label class="tabbed-label" for="9211cdab-d0fd-46c7-867f-1e0044c5ff9d">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ElectricalProjection" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ElectricalProjection</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ElectricalProjection</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">presynaptic_population</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">postsynaptic_population</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">electrical_connections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">electrical_connection_instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">electrical_connection_instance_ws</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="396ca393-aa7d-49d7-afc9-891746e47033" name="7472e2d7-3160-4238-9d4e-989d8d2c5b0c" type="radio">
+</input><label class="tabbed-label" for="396ca393-aa7d-49d7-afc9-891746e47033">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;electricalProjection</span> <span class="na">id=</span><span class="s">&quot;testGJconn&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;iafPop1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;iafPop2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;electricalConnectionInstance</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;../iafPop1/0/iaf&quot;</span> <span class="na">postCell=</span><span class="s">&quot;../iafPop2/0/iaf&quot;</span> <span class="na">preSegment=</span><span class="s">&quot;0&quot;</span> <span class="na">preFractionAlong=</span><span class="s">&quot;0.5&quot;</span> <span class="na">postSegment=</span><span class="s">&quot;0&quot;</span> <span class="na">postFractionAlong=</span><span class="s">&quot;0.5&quot;</span> <span class="na">synapse=</span><span class="s">&quot;gj1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/electricalProjection&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;electricalProjection</span> <span class="na">id=</span><span class="s">&quot;testGJconn&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;iafPop1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;iafPop2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;electricalConnection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;0&quot;</span> <span class="na">postCell=</span><span class="s">&quot;0&quot;</span> <span class="na">synapse=</span><span class="s">&quot;gj1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/electricalProjection&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="continuousconnection">
+<span id="schema-continuousconnection"></span><h2>continuousConnection<a class="headerlink" href="#continuousconnection" title="Permalink to this headline">¶</a></h2>
+<p><i>An instance of a connection in a  <a class="reference internal" href="#schema-continuousprojection"><span class="std std-ref">continuousProjection</span></a> between <strong>presynapticPopulation</strong> to another <strong>postsynapticPopulation</strong> through a <strong>preComponent</strong> at the start and <strong>postComponent</strong> at the end. Can be used for analog synapses.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="97620406-7087-4f87-9a50-fa3989273cae" name="6d698493-5e4b-414d-8bb4-0f2b69caf59e" type="radio">
+</input><label class="tabbed-label" for="97620406-7087-4f87-9a50-fa3989273cae">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preComponent</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Synapses.html#schema-basegradedsynapse"><span class="std std-ref">baseGradedSynapse</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>postComponent</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Synapses.html#schema-basegradedsynapse"><span class="std std-ref">baseGradedSynapse</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="158e2a3a-dae9-44b4-88f1-ff3ec15a80ef" name="6d698493-5e4b-414d-8bb4-0f2b69caf59e" type="radio">
+</input><label class="tabbed-label" for="158e2a3a-dae9-44b4-88f1-ff3ec15a80ef">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ContinuousConnection" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ContinuousConnection</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ContinuousConnection</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">pre_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">post_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">post_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">pre_component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="b51073e1-7173-4141-9a77-07e979f48e03" name="6d698493-5e4b-414d-8bb4-0f2b69caf59e" type="radio">
+</input><label class="tabbed-label" for="b51073e1-7173-4141-9a77-07e979f48e03">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;continuousConnection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;0&quot;</span> <span class="na">postCell=</span><span class="s">&quot;0&quot;</span> <span class="na">preComponent=</span><span class="s">&quot;silent1&quot;</span> <span class="na">postComponent=</span><span class="s">&quot;gs1&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;continuousConnection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;0&quot;</span> <span class="na">postCell=</span><span class="s">&quot;0&quot;</span> <span class="na">preComponent=</span><span class="s">&quot;silent2&quot;</span> <span class="na">postComponent=</span><span class="s">&quot;gs2&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="continuousconnectioninstance">
+<span id="schema-continuousconnectioninstance"></span><h2>continuousConnectionInstance<a class="headerlink" href="#continuousconnectioninstance" title="Permalink to this headline">¶</a></h2>
+<p><i>An instance of a connection in a  <a class="reference internal" href="#schema-continuousprojection"><span class="std std-ref">continuousProjection</span></a> between <strong>presynapticPopulation</strong> to another <strong>postsynapticPopulation</strong> through a <strong>preComponent</strong> at the start and <strong>postComponent</strong> at the end. Populations need to be of type  <a class="reference internal" href="#schema-populationlist"><span class="std std-ref">populationList</span></a> and contain  <a class="reference internal" href="#schema-instance"><span class="std std-ref">instance</span></a> and  <a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a> elements. Can be used for analog synapses.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="422b6a7f-9aca-4837-b25d-439302a18266" name="ab0b1100-c1a8-41ec-bb64-d6fc1f671e8a" type="radio">
+</input><label class="tabbed-label" for="422b6a7f-9aca-4837-b25d-439302a18266">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>preSegment</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postSegment</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="4c60bb44-070b-4f5a-ab32-0048e20212cd" name="ab0b1100-c1a8-41ec-bb64-d6fc1f671e8a" type="radio">
+</input><label class="tabbed-label" for="4c60bb44-070b-4f5a-ab32-0048e20212cd">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preCell</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postCell</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="2cca29ab-263f-4cfa-93f4-97878955f1c5" name="ab0b1100-c1a8-41ec-bb64-d6fc1f671e8a" type="radio">
+</input><label class="tabbed-label" for="2cca29ab-263f-4cfa-93f4-97878955f1c5">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preComponent</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Synapses.html#schema-basegradedsynapse"><span class="std std-ref">baseGradedSynapse</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>postComponent</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Synapses.html#schema-basegradedsynapse"><span class="std std-ref">baseGradedSynapse</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="72aed62f-de62-4441-966f-78cc76fb65c0" name="ab0b1100-c1a8-41ec-bb64-d6fc1f671e8a" type="radio">
+</input><label class="tabbed-label" for="72aed62f-de62-4441-966f-78cc76fb65c0">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ContinuousConnectionInstance" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ContinuousConnectionInstance</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ContinuousConnectionInstance</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">pre_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">post_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">post_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">pre_component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="continuousconnectioninstancew">
+<span id="schema-continuousconnectioninstancew"></span><h2>continuousConnectionInstanceW<a class="headerlink" href="#continuousconnectioninstancew" title="Permalink to this headline">¶</a></h2>
+<p>extends <a class="reference internal" href="#schema-continuousconnectioninstance"><span class="std std-ref">continuousConnectionInstance</span></a></p>
+<p><i>An instance of a connection in a  <a class="reference internal" href="#schema-continuousprojection"><span class="std std-ref">continuousProjection</span></a> between <strong>presynapticPopulation</strong> to another <strong>postsynapticPopulation</strong> through a <strong>preComponent</strong> at the start and <strong>postComponent</strong> at the end. Populations need to be of type  <a class="reference internal" href="#schema-populationlist"><span class="std std-ref">populationList</span></a> and contain  <a class="reference internal" href="#schema-instance"><span class="std std-ref">instance</span></a> and  <a class="reference internal" href="#schema-location"><span class="std std-ref">location</span></a> elements. Can be used for analog synapses. Includes setting of <strong>weight</strong> for the connection.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="18e7d5fd-2cd8-4337-999c-70b177b18d0d" name="420fed19-a413-4f36-8d05-2a5d71cf2995" type="radio">
+</input><label class="tabbed-label" for="18e7d5fd-2cd8-4337-999c-70b177b18d0d">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="edd06410-f7b0-4ddb-b5d7-5c4cbe392749" name="420fed19-a413-4f36-8d05-2a5d71cf2995" type="radio">
+</input><label class="tabbed-label" for="edd06410-f7b0-4ddb-b5d7-5c4cbe392749">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postFractionAlong</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>preSegment</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postSegment</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="8e4ca581-0c72-4d04-9d52-2b7605b18a4f" name="420fed19-a413-4f36-8d05-2a5d71cf2995" type="radio">
+</input><label class="tabbed-label" for="8e4ca581-0c72-4d04-9d52-2b7605b18a4f">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>preCell</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>postCell</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="8d21e828-f125-499e-b015-12a87c7d770c" name="420fed19-a413-4f36-8d05-2a5d71cf2995" type="radio">
+</input><label class="tabbed-label" for="8d21e828-f125-499e-b015-12a87c7d770c">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ContinuousConnectionInstanceW" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ContinuousConnectionInstanceW</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ContinuousConnectionInstanceW</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pre_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">pre_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">post_cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_segment</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">post_fraction_along</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span> <span class="n">pre_component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="382e8d60-b674-46d1-855a-ad2098c6a91f" name="420fed19-a413-4f36-8d05-2a5d71cf2995" type="radio">
+</input><label class="tabbed-label" for="382e8d60-b674-46d1-855a-ad2098c6a91f">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;continuousConnectionInstanceW</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;../hhPop1/0/hhcell&quot;</span> <span class="na">postCell=</span><span class="s">&quot;../hhPop2/0/hhcell&quot;</span> <span class="na">preComponent=</span><span class="s">&quot;silent1&quot;</span> <span class="na">postComponent=</span><span class="s">&quot;gs1&quot;</span> <span class="na">weight=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="continuousprojection">
+<span id="schema-continuousprojection"></span><h2>continuousProjection<a class="headerlink" href="#continuousprojection" title="Permalink to this headline">¶</a></h2>
+<p><i>A projection between <strong>presynapticPopulation</strong> and <strong>postsynapticPopulation</strong> through components <strong>preComponent</strong> at the start and <strong>postComponent</strong> at the end of a  <a class="reference internal" href="#schema-continuousconnection"><span class="std std-ref">continuousConnection</span></a> or  <a class="reference internal" href="#schema-continuousconnectioninstance"><span class="std std-ref">continuousConnectionInstance</span></a>. Can be used for analog synapses.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="dd06b94f-3128-4b89-a746-de6fa574af31" name="318f627c-7b96-4e75-9818-e5487e73b8eb" type="radio">
+</input><label class="tabbed-label" for="dd06b94f-3128-4b89-a746-de6fa574af31">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>presynapticPopulation</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-population"><span class="std std-ref">population</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>postsynapticPopulation</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-population"><span class="std std-ref">population</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="f61cbaa3-8f8e-4e7a-a610-2e0734f314a7" name="318f627c-7b96-4e75-9818-e5487e73b8eb" type="radio">
+</input><label class="tabbed-label" for="f61cbaa3-8f8e-4e7a-a610-2e0734f314a7">
+Children list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>connections</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-continuousconnection"><span class="std std-ref">continuousConnection</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>connectionInstances</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-continuousconnectioninstance"><span class="std std-ref">continuousConnectionInstance</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="2c220ee0-7bd2-4885-8464-0d0924c67b9d" name="318f627c-7b96-4e75-9818-e5487e73b8eb" type="radio">
+</input><label class="tabbed-label" for="2c220ee0-7bd2-4885-8464-0d0924c67b9d">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ContinuousProjection" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ContinuousProjection</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ContinuousProjection</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">presynaptic_population</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">postsynaptic_population</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">continuous_connections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">continuous_connection_instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">continuous_connection_instance_ws</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="3ad4b023-7489-4208-9031-a61a152a1941" name="318f627c-7b96-4e75-9818-e5487e73b8eb" type="radio">
+</input><label class="tabbed-label" for="3ad4b023-7489-4208-9031-a61a152a1941">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;continuousProjection</span> <span class="na">id=</span><span class="s">&quot;testLinearGradedConn&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;iafPop1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;iafPop2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;continuousConnection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;0&quot;</span> <span class="na">postCell=</span><span class="s">&quot;0&quot;</span> <span class="na">preComponent=</span><span class="s">&quot;silent1&quot;</span> <span class="na">postComponent=</span><span class="s">&quot;gs1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/continuousProjection&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;continuousProjection</span> <span class="na">id=</span><span class="s">&quot;testGradedConn&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;iafPop1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;iafPop3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;continuousConnection</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;0&quot;</span> <span class="na">postCell=</span><span class="s">&quot;0&quot;</span> <span class="na">preComponent=</span><span class="s">&quot;silent2&quot;</span> <span class="na">postComponent=</span><span class="s">&quot;gs2&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/continuousProjection&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;continuousProjection</span> <span class="na">id=</span><span class="s">&quot;testGradedConn&quot;</span> <span class="na">presynapticPopulation=</span><span class="s">&quot;hhPop1&quot;</span> <span class="na">postsynapticPopulation=</span><span class="s">&quot;hhPop2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;continuousConnectionInstanceW</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">preCell=</span><span class="s">&quot;../hhPop1/0/hhcell&quot;</span> <span class="na">postCell=</span><span class="s">&quot;../hhPop2/0/hhcell&quot;</span> <span class="na">preComponent=</span><span class="s">&quot;silent1&quot;</span> <span class="na">postComponent=</span><span class="s">&quot;gs1&quot;</span> <span class="na">weight=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/continuousProjection&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="explicitinput">
+<span id="schema-explicitinput"></span><h2>explicitInput<a class="headerlink" href="#explicitinput" title="Permalink to this headline">¶</a></h2>
+<p><i>An explicit input ( anything which extends  <a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a> ) to a target cell in a population.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="3605c38f-7367-4dbb-8bbc-50d19bdbbc62" name="669b47a9-dd7a-4505-8642-6b04096b88c6" type="radio">
+</input><label class="tabbed-label" for="3605c38f-7367-4dbb-8bbc-50d19bdbbc62">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>destination</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>sourcePort</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>targetPort</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="9fbcfef7-2260-42f6-ae00-96a2edc2da2c" name="669b47a9-dd7a-4505-8642-6b04096b88c6" type="radio">
+</input><label class="tabbed-label" for="9fbcfef7-2260-42f6-ae00-96a2edc2da2c">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>target</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="f6d73ed5-cddf-4d0c-8902-f6c94b4f6ed0" name="669b47a9-dd7a-4505-8642-6b04096b88c6" type="radio">
+</input><label class="tabbed-label" for="f6d73ed5-cddf-4d0c-8902-f6c94b4f6ed0">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>input</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="81390d98-194a-4026-8282-62c9f3dc4ae1" name="669b47a9-dd7a-4505-8642-6b04096b88c6" type="radio">
+</input><label class="tabbed-label" for="81390d98-194a-4026-8282-62c9f3dc4ae1">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=ExplicitInput" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">ExplicitInput</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">ExplicitInput</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="8ae669cc-1b57-47d2-9409-a44b50a29fa5" name="669b47a9-dd7a-4505-8642-6b04096b88c6" type="radio">
+</input><label class="tabbed-label" for="8ae669cc-1b57-47d2-9409-a44b50a29fa5">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;explicitInput</span> <span class="na">target=</span><span class="s">&quot;iafPop1[0]&quot;</span> <span class="na">input=</span><span class="s">&quot;pulseGen1&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;explicitInput</span> <span class="na">target=</span><span class="s">&quot;iafPop1[0]&quot;</span> <span class="na">input=</span><span class="s">&quot;pulseGen2&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;explicitInput</span> <span class="na">target=</span><span class="s">&quot;iafPop1[0]&quot;</span> <span class="na">input=</span><span class="s">&quot;pulseGen3&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inputlist">
+<span id="schema-inputlist"></span><h2>inputList<a class="headerlink" href="#inputlist" title="Permalink to this headline">¶</a></h2>
+<p><i>An explicit list of  <a class="reference internal" href="#schema-input"><span class="std std-ref">input</span></a>s to a <strong>population.</strong>.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="81394c72-acf3-41b7-b24f-54339d044d09" name="30130cb7-9bda-4f0c-a5f3-f39d60a7b63f" type="radio">
+</input><label class="tabbed-label" for="81394c72-acf3-41b7-b24f-54339d044d09">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>population</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="c258bb85-bace-4e83-8792-1a789b488ad0" name="30130cb7-9bda-4f0c-a5f3-f39d60a7b63f" type="radio">
+</input><label class="tabbed-label" for="c258bb85-bace-4e83-8792-1a789b488ad0">
+Component References</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>component</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="Inputs.html#schema-basepointcurrent"><span class="std std-ref">basePointCurrent</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="13621951-9e45-4659-a58d-11197bce2efa" name="30130cb7-9bda-4f0c-a5f3-f39d60a7b63f" type="radio">
+</input><label class="tabbed-label" for="13621951-9e45-4659-a58d-11197bce2efa">
+Children list</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>inputs</strong></p></td>
+<td></td>
+<td><p><a class="reference internal" href="#schema-input"><span class="std std-ref">input</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="643761a8-b4ea-4e82-9a82-d7fc865f4e58" name="30130cb7-9bda-4f0c-a5f3-f39d60a7b63f" type="radio">
+</input><label class="tabbed-label" for="643761a8-b4ea-4e82-9a82-d7fc865f4e58">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=InputList" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">InputList</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">InputList</span><span class="p">(</span><span class="n">neuro_lex_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">populations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">input_ws</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="58415f60-9f72-4f2a-9280-b0b1c69b0306" name="30130cb7-9bda-4f0c-a5f3-f39d60a7b63f" type="radio">
+</input><label class="tabbed-label" for="58415f60-9f72-4f2a-9280-b0b1c69b0306">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inputList</span> <span class="na">id=</span><span class="s">&quot;i1&quot;</span> <span class="na">component=</span><span class="s">&quot;pulseGen1&quot;</span> <span class="na">population=</span><span class="s">&quot;hhPop1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">target=</span><span class="s">&quot;../hhPop1/0/hhcell&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/inputList&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inputList</span> <span class="na">id=</span><span class="s">&quot;i1&quot;</span> <span class="na">component=</span><span class="s">&quot;pulseGen1&quot;</span> <span class="na">population=</span><span class="s">&quot;iafPop1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">target=</span><span class="s">&quot;../iafPop1/0/iaf&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/inputList&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;inputList</span> <span class="na">id=</span><span class="s">&quot;i2&quot;</span> <span class="na">component=</span><span class="s">&quot;pulseGen2&quot;</span> <span class="na">population=</span><span class="s">&quot;iafPop2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">target=</span><span class="s">&quot;../iafPop2/0/iaf&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/inputList&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="input">
+<span id="schema-input"></span><h2>input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p><i>Specifies a single input to a <strong>target,</strong> optionally giving the <strong>segmentId</strong> ( default 0 ) and <strong>fractionAlong</strong> the segment ( default 0.5 ).</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="72d47306-e12d-4f18-bd7e-2bb7e96ce318" name="4560b6c9-4499-4715-bb59-0a47ff6635a0" type="radio">
+</input><label class="tabbed-label" for="72d47306-e12d-4f18-bd7e-2bb7e96ce318">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>segmentId</strong></p></td>
+<td><p>Optional specification of the segment to target, default 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>fractionAlong</strong></p></td>
+<td><p>Optional specification of the fraction along the specified segment, default 0.5</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>destination</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="b6b7af1e-927a-41c6-9af8-570a943b5eb9" name="4560b6c9-4499-4715-bb59-0a47ff6635a0" type="radio">
+</input><label class="tabbed-label" for="b6b7af1e-927a-41c6-9af8-570a943b5eb9">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>target</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="d48d909b-67fe-47c1-94ce-fddbbf14ddc7" name="4560b6c9-4499-4715-bb59-0a47ff6635a0" type="radio">
+</input><label class="tabbed-label" for="d48d909b-67fe-47c1-94ce-fddbbf14ddc7">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=Input" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">Input</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">segment_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fraction_along</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extensiontype_</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="c5140eff-3119-45d7-a706-c81aca4cb33d" name="4560b6c9-4499-4715-bb59-0a47ff6635a0" type="radio">
+</input><label class="tabbed-label" for="c5140eff-3119-45d7-a706-c81aca4cb33d">
+Usage: XML</label><div class="tabbed-content docutils">
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">target=</span><span class="s">&quot;../hhPop1/0/hhcell&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">target=</span><span class="s">&quot;../iafPop1/0/iaf&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">target=</span><span class="s">&quot;../iafPop2/0/iaf&quot;</span> <span class="na">destination=</span><span class="s">&quot;synapses&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inputw">
+<span id="schema-inputw"></span><h2>inputW<a class="headerlink" href="#inputw" title="Permalink to this headline">¶</a></h2>
+<p>extends <a class="reference internal" href="#schema-input"><span class="std std-ref">input</span></a></p>
+<p><i>Specifies input lists. Can set <strong>weight</strong> to scale individual inputs.</i></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="5cb115ac-82f9-4c14-9ff0-0c3bd847b80b" name="3ea8c3a8-c4a2-4dcc-ab0f-a940585cae66" type="radio">
+</input><label class="tabbed-label" for="5cb115ac-82f9-4c14-9ff0-0c3bd847b80b">
+Parameters</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>weight</strong></p></td>
+<td></td>
+<td><p>Dimensionless</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="ae36cbb4-f74b-41a1-bb7d-30dcf843c6f6" name="3ea8c3a8-c4a2-4dcc-ab0f-a940585cae66" type="radio">
+</input><label class="tabbed-label" for="ae36cbb4-f74b-41a1-bb7d-30dcf843c6f6">
+Text fields</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>destination</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="c90a74c9-819d-4628-9e24-577e51499cb1" name="3ea8c3a8-c4a2-4dcc-ab0f-a940585cae66" type="radio">
+</input><label class="tabbed-label" for="c90a74c9-819d-4628-9e24-577e51499cb1">
+Paths</label><div class="tabbed-content docutils">
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>target</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="4da451dc-4b7d-4c6f-bff1-9f5ce0659b84" name="3ea8c3a8-c4a2-4dcc-ab0f-a940585cae66" type="radio">
+</input><label class="tabbed-label" for="4da451dc-4b7d-4c6f-bff1-9f5ce0659b84">
+Usage: Python</label><div class="tabbed-content docutils">
+<p><em><a href="https://libneuroml.readthedocs.io/en/latest/search.html?q=InputW" target="_blank">Go to the libNeuroML documentation</a></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuroml</span> <span class="kn">import</span> <span class="n">InputW</span>
+
+<span class="n">variable</span> <span class="o">=</span> <span class="n">InputW</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">segment_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fraction_along</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "NeuroML/Documentation",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Userdocs/Schemas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Inputs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Inputs</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="PyNN.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PyNN</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By NeuroML contributors<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
